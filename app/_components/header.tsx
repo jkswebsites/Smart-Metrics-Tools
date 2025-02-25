@@ -10,7 +10,7 @@ const Header = () => {
   const menu = useMenuManager();
   
   return (
-    <header className='w-full overflow-x-hidden h-[70px] flex  items-center justify-between'>
+    <header className='w-full  h-[70px] flex  items-center justify-between'>
       
     <LogoComponent/>
       <ManagerMenu {...menu}/>
