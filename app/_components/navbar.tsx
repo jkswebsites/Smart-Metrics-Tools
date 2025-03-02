@@ -8,12 +8,11 @@ import { BsHouseFill } from "react-icons/bs";
 
 const navLinks = [
     {name: 'Home', path: '/', icon: BsHouseFill},
-    {name: 'Spent Control', path: '/pages/spent-control', icon: MdOutlineCalculate},
+    //{name: 'Spent Control', path: '/pages/spent-control', icon: MdOutlineCalculate},
 ]
 
 const Navbar = ({menuIsOpen, handleMenuControl}:  ManagerMenuProps) => {
     const pathname = usePathname();
-    console.log(pathname);
     
   return (
     <nav className={`${menuIsOpen ? 'w-[90%] opacity-100': 'w-[0px] opacity-0'}  sm:w-4/8 overflow-hidden absolute top-[70px]  left-10  h-[90vh] smootTransition md:!w-[70%] md:!opacity-100 md:left-0 md:mr-4 md:relative md:h-[60px] md:top-0`}>
