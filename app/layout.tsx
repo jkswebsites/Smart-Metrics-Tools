@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import {Oxygen, Montserrat} from "next/font/google";
 import "./globals.css";
 import Header from "./_components/header";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title:{
@@ -35,6 +36,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+      
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-DEE8NXGBM2"/>
+        <Script>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'G-DEE8NXGBM2');
+            
+          `}
+        </Script>
+      </head>
       <body
         className={`${oxigen.variable} ${montserrat.variable} antialiased`}
       >
