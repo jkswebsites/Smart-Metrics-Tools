@@ -3,4 +3,4 @@
 
 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [Smart Metrics Tools Web](https://smart-metrics-tools.vercel.app/) with your browser to see the result.
