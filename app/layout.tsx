@@ -3,14 +3,15 @@ import {Oxygen, Montserrat} from "next/font/google";
 import "./globals.css";
 import Header from "./_components/header";
 import Script from "next/script";
-import LoadingPage from "./loading";
 
 export const metadata: Metadata = {
   title:{
+    absolute: 'Smart Metrics Tools',
     default:  "Seu Orçamento. | Smart Metrics Tools",
     template: "%s | Smart Metrics Tools"
   },
-  description: "Smart Metrics Tools is a websites to manager metrics of differents segments",
+  description: "Seu Orçamento é um aplicativo para ajudar pessoas há gerenciar suas compras, evitando que o valor passe do valor que você tem em mãos, como esse aplicativo suas compras sempre estarão sobre controle.",
+  keywords: "Seu Orçamento.,  Smart Metrics Tools, dinheiro, orçamento, controle de gasto, economida, inteligência financeira",
   icons: {
     icon: ["./icon.png"],
     apple: ["./icon.png"],
