@@ -39,7 +39,7 @@ const FormTotalValue = () => {
            
               type="number"
               placeholder='0,00'step={"0.01"}
-              className='border border-neutral-500 mt-1 px-4 py-3 rounded-md text-2xl font-semibold w-[95%] sm:w-[250px] text-neutral-200 tracking-wider bg-neutral-950 focus:border-white focus:outline-dashed '/>
+              className='border border-neutral-500 text-center mt-1 px-4 py-3 rounded-md text-2xl font-semibold w-[95%] sm:w-[250px] text-neutral-200 tracking-wider bg-neutral-950 focus:border-white focus:outline-dashed '/>
             <span className='relative -top-6 left-2 '>*</span>
           </div>
           {errors.valueTotal && <p className='text-red-600 text-sm mt-2 ml-2'>Este campo é obrigatório!</p>}

@@ -48,6 +48,7 @@ export default function RootLayout({
               gtag('config', 'G-DEE8NXGBM2');
           `}
         </Script>
+        <meta name="google-site-verification" content="0iWx9eFtGkDuB5YO9f1TtwYL829AvzxrWzUbhcAZ9vE" />
       </head>
       <body
         className={`${oxigen.variable} ${montserrat.variable} antialiased`}

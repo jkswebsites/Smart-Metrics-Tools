@@ -15,7 +15,7 @@ const SheetContentMenu = () => {
             <SheetTitle className="text-yellow-500 text-2xl">
                 <h2 className="flex text-4xl items-center justify-center">Smart <BsCart4 className="text-white" /> Buy</h2>
             </SheetTitle>
-            <SheetDescription className="text-neutral-300">
+            <SheetDescription className="text-neutral-300 text-center">
                 Lista de Items adicionados ao carrinho
             </SheetDescription>
         </SheetHeader>
