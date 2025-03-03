@@ -8,11 +8,11 @@ import Navbar from './navbar'
 
 
 const ManagerSmartBuy = () => {
-  const {smartBuyDatas, cartSmartBuy} = useContext(ContextSmartBuy)
+  const {smartBuyDatas } = useContext(ContextSmartBuy)
     
 
   return (
-    <div className='sm:w-[450px] mx-auto'>
+    <div className='sm:w-[450px] mx-auto mt-[50px]'>
       <PainelData/>
       <Navbar/>
       <FormTotalValue/>

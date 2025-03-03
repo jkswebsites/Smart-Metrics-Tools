@@ -3,6 +3,7 @@ import {Oxygen, Montserrat} from "next/font/google";
 import "./globals.css";
 import Header from "./_components/header";
 import Script from "next/script";
+import LoadingPage from "./loading";
 
 export const metadata: Metadata = {
   title:{
@@ -37,7 +38,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-      
         <Script async src="https://www.googletagmanager.com/gtag/js?id=G-DEE8NXGBM2"/>
         <Script>
           {`

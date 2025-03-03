@@ -77,8 +77,8 @@ const FormManagerValue = () => {
           {errors.amountItem && <p className='text-red-600 text-sm mt-2 ml-2'>Este campo é obrigatório!</p>}
         </label>
       </div>
-        <button type='submit' disabled={isSubmitting} className='bg-green-500 w-4/5 mx-auto py-1 rounded-md text-neutral-950'>Adicionar</button>
-        <button type="reset" onClick={resetAll} className='bg-neutral-500 w-4/5 mx-auto py-1 rounded-md text-neutral-950'>Cancelar</button>
+        <button type='submit' disabled={isSubmitting} className='bg-yellow-600 w-4/5 mx-auto py-1 rounded-md text-neutral-100'>Adicionar</button>
+        <button type="reset" onClick={resetAll} className='bg-neutral-950 w-4/5 mx-auto py-1 rounded-md text-neutral-100'>Cancelar</button>
     </form>
   )
 }

@@ -21,23 +21,25 @@ const SheetContentMenu = () => {
         <div className="w-[95%] h-16 mt-7 mx-auto">
             { cartSmartBuy.length > 0 ? (
                 <>
-                 <div className="w-28 h-16 bg-neutral-900 mb-4 rounded-lg p-1 flex flex-col">
-                    <span className="text-yellow-500">Total:</span>
-                    <span className="font-black">
+                 <div className="w-28 h-16 mb-4 rounded-lg p-1 flex justify-center items-center gap-x-2 relative">
+                    <span className="text-yellow-500 text-sm absolute bottom-1 font-black -right-2">Total:</span>
+                    <span className="font-black text-2xl">
                         {
                             formatBR(cartSmartBuy.reduce((acc, curr) => acc + curr.total, 0))
                         }
                     </span>
                  </div>
-                 <ul className="space-y-3">
+                 <ul className="space-y-3 h-[400px] overflow-y-auto ">
                     { cartSmartBuy.map((item, index) => (
-                        <li key={index} className="bg-neutral-800  p-4 rounded-xl flex items-center justify-between border border-yellow-500">
-                            <span className="text-yellow-500 font-bold">{item.item}</span>
+                        <li key={index} className="bg-neutral-800  px-2 rounded-xl flex flex-col justify-between border border-yellow-500">
+                            <span className="text-yellow-500 font-bold ">{item.item}</span>
+                            <div className="flex gap-x-2 items-center py-2">
                             <span>{formatBR(item.valueItem)}</span>
                             <span>X</span>
                             <span>{item.amountItem}</span>
                             <span>=</span>
                             <span>{formatBR(item.total)}</span>
+                         </div>
                         </li>
                     ))}
                 </ul>
