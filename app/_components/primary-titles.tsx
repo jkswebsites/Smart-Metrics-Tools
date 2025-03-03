@@ -9,11 +9,14 @@ export interface PrimaryTitlesProps {
 
 const PrimaryTitles = ({title, icon: Icon, subtitle} : PrimaryTitlesProps) => {
   return (
-    <div className="px-2 w-95% mx-auto text-center">
-    <h1 className="text-5xl flex items-center justify-center">
-          {title.split(' ')[0]} <Icon className="text-yellow-600"/> {title.split(' ')[1]}
-        </h1>
-        <h2 className="text-neutral-500 mr-6 -mt-2">{subtitle}</h2>
+    <div className="px-2 w-95% mx-auto text-center mb-4">
+        <h2 className="text-neutral-500 font-semibold">{subtitle}</h2>
+        <h2 className="text-4xl sm:text-5xl -mt-3 flex items-center justify-center">
+          <Icon className='text-yellow-600'/>
+          {title}
+          <span className='text-yellow-500'>.</span>
+        </h2>
+        
     </div>
   )
 }

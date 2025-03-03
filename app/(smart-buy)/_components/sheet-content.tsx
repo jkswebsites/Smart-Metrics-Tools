@@ -5,7 +5,6 @@ import { formatBR } from "@/app/helpers/formatCurrency";
 import { BsCart4 } from "react-icons/bs";
 const SheetContentMenu = () => {
     const  {cartSmartBuy} = useContext(ContextSmartBuy)
-    console.log(cartSmartBuy);
     
   return (
     

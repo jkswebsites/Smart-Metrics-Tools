@@ -6,7 +6,7 @@ import Script from "next/script";
 
 export const metadata: Metadata = {
   title:{
-    default:  "Smart Metrics Tools",
+    default:  "Seu Orçamento. | Smart Metrics Tools",
     template: "%s | Smart Metrics Tools"
   },
   description: "Smart Metrics Tools is a websites to manager metrics of differents segments",

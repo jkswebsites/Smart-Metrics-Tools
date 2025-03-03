@@ -9,8 +9,8 @@ import Navbar from './navbar'
 
 const ManagerSmartBuy = () => {
   const {smartBuyDatas, cartSmartBuy} = useContext(ContextSmartBuy)
-    console.log(cartSmartBuy);
     
+
   return (
     <div className='sm:w-[450px] mx-auto'>
       <PainelData/>
