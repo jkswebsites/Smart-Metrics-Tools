@@ -29,9 +29,9 @@ const FormTotalValue = () => {
   
   
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className='my-3 w-[95%] py-4 bg-neutral-900 rounded-lg mx-auto border border-neutral-500 flex justify-center items-center'>
-      <div>
-        <label>
+    <form onSubmit={handleSubmit(onSubmit)} className='my-3 py-2 w-[95%]  px-2 bg-neutral-900 rounded-lg mx-auto border border-neutral-500 flex  items-center justify-evenly'>
+      <div >
+        <label >
           <span className={`${'text-white'} text-sm tracking-wide`}>Valor para gastar:</span>
           <div>
             <input
@@ -39,13 +39,13 @@ const FormTotalValue = () => {
            
               type="number"
               placeholder='0,00'step={"0.01"}
-              className='border border-neutral-500 mt-1 px-6 py-3 rounded-md text-2xl font-semibold w-[250px] text-neutral-200 tracking-wider bg-neutral-950 focus:border-white focus:outline-dashed '/>
-            <span className='relative -top-6 left-2'>*</span>
+              className='border border-neutral-500 mt-1 px-4 py-3 rounded-md text-2xl font-semibold w-[95%] sm:w-[250px] text-neutral-200 tracking-wider bg-neutral-950 focus:border-white focus:outline-dashed '/>
+            <span className='relative -top-6 left-2 '>*</span>
           </div>
           {errors.valueTotal && <p className='text-red-600 text-sm mt-2 ml-2'>Este campo é obrigatório!</p>}
         </label>
       </div>
-      <button disabled={isSubmitting} className='ml-7 bg-green-700 text-2xl p-2 rounded-lg' title='add'>
+      <button disabled={isSubmitting} className=' bg-green-700 text-2xl p-2 mx-2 rounded-lg' title='add'>
         {
           !isSubmitting ? <FaRegPlusSquare /> : <CgSpinnerTwo className='animate-spin'/>
 

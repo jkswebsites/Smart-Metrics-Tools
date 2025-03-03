@@ -8,11 +8,19 @@ interface ISmartBuy {
     valueCurrent: number;
     totalSpent: number;
 }
+interface CartSmartBuy {
+    item: string
+    amountItem: number,
+    total: number;
+    valueItem: number;
+}
 interface IContextSmartBuy {
     smartBuyDatas: ISmartBuy
     addValueTotal?: (valueTotal: number)  => void,
     resetAll?:   () => void,
     managerSmartBuyData?: (data: ManagerSmartProps) => void,
+    addCartList?: (data: ManagerSmartProps) => void,
+    cartSmartBuy: CartSmartBuy[]
 
 }
 interface ManagerSmartProps {
@@ -27,12 +35,13 @@ const initialState: ISmartBuy = {
     totalSpent: 0,
 }
 
-export const ContextSmartBuy = createContext<IContextSmartBuy>({smartBuyDatas: initialState });
+export const ContextSmartBuy = createContext<IContextSmartBuy>({smartBuyDatas: initialState, cartSmartBuy: [] });
 
 export const ContextSmartBuyProvider = ({children}: {children: ReactNode}) => {
     const [smartBuyDatas, setSmartBuyDatas] = useState<ISmartBuy>(initialState)
     const [callStorage, setCallStorage] = useState<boolean>(false);
-    
+    const [cartSmartBuy, setCartSmartBuy] = useState<CartSmartBuy[]>([])
+
     const addValueTotal = (valueTotal: number) => {
         if (typeof window !== 'undefined') {
             const newValue:ISmartBuy = {
@@ -45,11 +54,12 @@ export const ContextSmartBuyProvider = ({children}: {children: ReactNode}) => {
         }
     }
     const resetAll = () => {
-        sessionStorage.removeItem('smartBuy')
+        sessionStorage.removeItem('smartBuy');
+        sessionStorage.removeItem('cartSmartBuy');
+        setCartSmartBuy([]);
         setCallStorage(true);
     }
     const managerSmartBuyData = (data: ManagerSmartProps) => {
-        console.log(data);
         
         if (typeof window !== 'undefined') {
             const smaryBuyData = sessionStorage.getItem('smartBuy');
@@ -61,18 +71,38 @@ export const ContextSmartBuyProvider = ({children}: {children: ReactNode}) => {
                     valueCurrent: smartBuyDatas.valueTotal - (data.valueItem * data.amountItem),
                     totalSpent: smartBuyDatas.totalSpent + (data.valueItem * data.amountItem),
                 }
-                console.log(newValue);
                 
                 sessionStorage.setItem('smartBuy', JSON.stringify(newValue));
                 setCallStorage(true);
             }
         }
     }
+    const addCartList = (data: ManagerSmartProps) => {
+        const addValue = {
+            ...data,
+            total: data.valueItem * data.amountItem
+        }
+        
+        if(typeof window !== 'undefined') {
+            const cartSmartBuy = sessionStorage.getItem('cartSmartBuy');
+            
+            if(cartSmartBuy) {
+                const _items = JSON.parse(cartSmartBuy);
+                const mergeItems = [..._items, addValue ]
+                sessionStorage.setItem('cartSmartBuy', JSON.stringify(mergeItems));
+                
+            } else {
+                sessionStorage.setItem('cartSmartBuy', JSON.stringify([addValue]));
+               
+            }
+            
+        }
+    }
     useEffect(() => {
     try {
         if (typeof window !== 'undefined') {
             const storageSmartBuy = sessionStorage.getItem('smartBuy');
-
+            
             if(storageSmartBuy) {
                 const smartBuyData: ISmartBuy  =  JSON.parse(storageSmartBuy)
                 setSmartBuyDatas(smartBuyData);
@@ -91,8 +121,19 @@ export const ContextSmartBuyProvider = ({children}: {children: ReactNode}) => {
     }, [callStorage]);
 
 
+    useEffect(() => {
+        if(typeof window !== 'undefined') {
+            const smartCartStorage = sessionStorage.getItem('cartSmartBuy');
+
+            if(smartCartStorage) {
+                const storageDatas: CartSmartBuy[] = JSON.parse(smartCartStorage);
+                setCartSmartBuy(storageDatas);
+            }
+        }
+    },[callStorage]);
+
     return (
-        <ContextSmartBuy.Provider value={{smartBuyDatas, addValueTotal, resetAll, managerSmartBuyData}}>
+        <ContextSmartBuy.Provider value={{smartBuyDatas, addValueTotal, resetAll, managerSmartBuyData, addCartList, cartSmartBuy}}>
             {children}
         </ContextSmartBuy.Provider>
     )

@@ -11,7 +11,7 @@ export interface FieldsForm {
 }
 
 const FormManagerValue = () => {
-  const {resetAll, managerSmartBuyData} = useContext(ContextSmartBuy);
+  const {resetAll, managerSmartBuyData, addCartList} = useContext(ContextSmartBuy);
   const {register, handleSubmit,  setFocus, resetField, formState: {errors, isSubmitting}} = useForm<FieldsForm>({
     defaultValues: {
       amountItem: 1
@@ -19,7 +19,8 @@ const FormManagerValue = () => {
   })
   
   const onSubmit: SubmitHandler<FieldsForm> = (data) => {
-    managerSmartBuyData!(data); 
+    managerSmartBuyData!(data);
+    addCartList!(data);
     resetField('item');
     resetField('valueItem');
     resetField('amountItem');
@@ -76,8 +77,8 @@ const FormManagerValue = () => {
           {errors.amountItem && <p className='text-red-600 text-sm mt-2 ml-2'>Este campo é obrigatório!</p>}
         </label>
       </div>
-        <button type='submit' disabled={isSubmitting} className='bg-green-500 w-4/5 mx-auto py-1 rounded-md text-neutral-600'>Adicionar</button>
-        <button type="reset" onClick={resetAll} className='bg-neutral-500 w-4/5 mx-auto py-1 rounded-md text-neutral-800'>Cancelar</button>
+        <button type='submit' disabled={isSubmitting} className='bg-green-500 w-4/5 mx-auto py-1 rounded-md text-neutral-950'>Adicionar</button>
+        <button type="reset" onClick={resetAll} className='bg-neutral-500 w-4/5 mx-auto py-1 rounded-md text-neutral-950'>Cancelar</button>
     </form>
   )
 }
