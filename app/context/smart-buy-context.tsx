@@ -1,5 +1,5 @@
 "use client"
-import { createContext,  ReactNode, useEffect, useState } from "react";
+import { createContext,  ReactNode, useEffect, useRef, useState } from "react";
 
 
 interface ISmartBuy {
@@ -41,36 +41,45 @@ export const ContextSmartBuyProvider = ({children}: {children: ReactNode}) => {
     const [smartBuyDatas, setSmartBuyDatas] = useState<ISmartBuy>(initialState)
     const [callStorage, setCallStorage] = useState<boolean>(false);
     const [cartSmartBuy, setCartSmartBuy] = useState<CartSmartBuy[]>([])
+    let refValueTotal = useRef<number>(0);
+
 
     const addValueTotal = (valueTotal: number) => {
         if (typeof window !== 'undefined') {
             const newValue:ISmartBuy = {
                 ...smartBuyDatas,
-                valueTotal: smartBuyDatas.valueTotal + valueTotal
+                valueTotal: smartBuyDatas.valueTotal + valueTotal,
+                valueCurrent: smartBuyDatas.valueCurrent + valueTotal,
             }
             
             sessionStorage.setItem('smartBuy', JSON.stringify(newValue));
+            refValueTotal.current = newValue.valueTotal
             setCallStorage(true);
         }
+        
+        
     }
     const resetAll = () => {
         sessionStorage.removeItem('smartBuy');
         sessionStorage.removeItem('cartSmartBuy');
         setCartSmartBuy([]);
+        refValueTotal.current = 0;
         setCallStorage(true);
     }
     const managerSmartBuyData = (data: ManagerSmartProps) => {
         
         if (typeof window !== 'undefined') {
-            const smaryBuyData = sessionStorage.getItem('smartBuy');
+            const dataStorage = sessionStorage.getItem('smartBuy');
 
-            if(smaryBuyData) {
+            if(dataStorage) {
+                const valueInStorage: ISmartBuy = JSON.parse(dataStorage);
                 const newValue:ISmartBuy = {
                     ...smartBuyDatas,
                     item: data.item,
-                    valueCurrent: smartBuyDatas.valueTotal - (data.valueItem * data.amountItem),
+                    valueCurrent: valueInStorage.valueCurrent - (data.valueItem * data.amountItem),
                     totalSpent: smartBuyDatas.totalSpent + (data.valueItem * data.amountItem),
                 }
+                console.log(newValue);
                 
                 sessionStorage.setItem('smartBuy', JSON.stringify(newValue));
                 setCallStorage(true);
