@@ -3,11 +3,11 @@ import {Oxygen, Montserrat} from "next/font/google";
 import "./globals.css";
 import Header from "./_components/header";
 import Script from "next/script";
+import Footer from "./_components/footer";
 
 export const metadata: Metadata = {
   title:{
-    absolute: 'Smart Metrics Tools',
-    default:  "Seu Orçamento. | Smart Metrics Tools",
+    default:  "Smart Buy | Smart Metrics Tools",
     template: "%s | Smart Metrics Tools"
   },
   description: "Seu Orçamento é um aplicativo para ajudar pessoas há gerenciar suas compras, evitando que o valor passe do valor que você tem em mãos, como esse aplicativo suas compras sempre estarão sobre controle.",
@@ -56,6 +56,7 @@ export default function RootLayout({
       >
         <Header/>
         {children}
+        <Footer/>
       </body>
     </html>
   );

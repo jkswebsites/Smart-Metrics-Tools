@@ -45,7 +45,8 @@ const FormTotalValue = () => {
           {errors.valueTotal && <p className='text-red-600 text-sm mt-2 ml-2'>Este campo é obrigatório!</p>}
         </label>
       </div>
-      <button disabled={isSubmitting} className=' bg-green-700 text-2xl p-2 mx-2 rounded-lg' title='add'>
+
+      <button disabled={isSubmitting} type='submit' className=' bg-green-700 text-2xl p-2 mx-2 rounded-lg' title='add'>
         {
           !isSubmitting ? <FaRegPlusSquare /> : <CgSpinnerTwo className='animate-spin'/>
 
