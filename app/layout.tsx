@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react';
 import type { Metadata } from 'next';
 import { Oxygen, Montserrat } from 'next/font/google';
@@ -10,6 +11,19 @@ export const metadata: Metadata = {
     absolute: 'Smart Metrics Tools',
     default: 'Bora Poupar! | Smart Metrics Tools',
     template: '%s | Smart Metrics Tools',
+=======
+import type { Metadata } from "next";
+import {Oxygen, Montserrat} from "next/font/google";
+import "./globals.css";
+import Header from "./_components/header";
+import Script from "next/script";
+import Footer from "./_components/footer";
+
+export const metadata: Metadata = {
+  title:{
+    default:  "Smart Buy | Smart Metrics Tools",
+    template: "%s | Smart Metrics Tools"
+>>>>>>> e655a0d45ca3b26fec42a2ffbd89184021df4c25
   },
   description:
     'Seu Orçamento é um aplicativo para ajudar pessoas há gerenciar suas compras, evitando que o valor passe do valor que você tem em mãos, como esse aplicativo suas compras sempre estarão sobre controle.',
@@ -63,6 +77,7 @@ export default function RootLayout({
       <body className={`${oxigen.variable} ${montserrat.variable} antialiased`}>
         <Header />
         {children}
+        <Footer/>
       </body>
     </html>
   );

@@ -3,11 +3,11 @@ import React from 'react'
 import Link from 'next/link'
 import { ManagerMenuProps } from './manager-menu'
 import { usePathname } from 'next/navigation'
-//import { MdOutlineCalculate } from "react-icons/md";
-import { BsHouseFill } from "react-icons/bs";
+import { MdOutlineCalculate } from "react-icons/md";
+//import { BsHouseFill } from "react-icons/bs";
 
 const navLinks = [
-    {name: 'Home', path: '/', icon: BsHouseFill},
+    {name: 'SmartBuy', path: '/', icon: MdOutlineCalculate},
     //{name: 'Spent Control', path: '/pages/spent-control', icon: MdOutlineCalculate},
 ]
 
