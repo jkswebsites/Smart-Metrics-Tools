@@ -1,34 +1,37 @@
-import type { Metadata } from "next";
-import {Oxygen, Montserrat} from "next/font/google";
-import "./globals.css";
-import Header from "./_components/header";
-import Script from "next/script";
+import React from 'react';
+import type { Metadata } from 'next';
+import { Oxygen, Montserrat } from 'next/font/google';
+import './globals.css';
+import Header from './_components/header';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
-  title:{
+  title: {
     absolute: 'Smart Metrics Tools',
-    default:  "Seu Orçamento. | Smart Metrics Tools",
-    template: "%s | Smart Metrics Tools"
+    default: 'Bora Poupar! | Smart Metrics Tools',
+    template: '%s | Smart Metrics Tools',
   },
-  description: "Seu Orçamento é um aplicativo para ajudar pessoas há gerenciar suas compras, evitando que o valor passe do valor que você tem em mãos, como esse aplicativo suas compras sempre estarão sobre controle.",
-  keywords: "Seu Orçamento.,  Smart Metrics Tools, dinheiro, orçamento, controle de gasto, economida, inteligência financeira",
+  description:
+    'Seu Orçamento é um aplicativo para ajudar pessoas há gerenciar suas compras, evitando que o valor passe do valor que você tem em mãos, como esse aplicativo suas compras sempre estarão sobre controle.',
+  keywords:
+    'Seu Orçamento., Bora Poupar  Smart Metrics Tools, dinheiro, orçamento, controle de gasto, economida, inteligência financeira',
   icons: {
-    icon: ["./icon.png"],
-    apple: ["./icon.png"],
-    shortcut: ["./icon.png"],
-  }
+    icon: ['./icon.png'],
+    apple: ['./icon.png'],
+    shortcut: ['./icon.png'],
+  },
 };
 
 const oxigen = Oxygen({
   subsets: ['latin'],
-  variable: "--font-oxygen",
+  variable: '--font-oxygen',
   style: ['normal'],
-  weight: ['300', '400', "700"],
+  weight: ['300', '400', '700'],
 });
 const montserrat = Montserrat({
-    subsets: ["latin"],
-  variable: "--font-montserrat",
-  weight: ["100","500","900"],
+  subsets: ['latin'],
+  variable: '--font-montserrat',
+  weight: ['100', '500', '900'],
 });
 
 export default function RootLayout({
@@ -39,7 +42,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-DEE8NXGBM2"/>
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-DEE8NXGBM2"
+        />
         <Script>
           {`
             window.dataLayer = window.dataLayer || [];
@@ -49,12 +55,13 @@ export default function RootLayout({
               gtag('config', 'G-DEE8NXGBM2');
           `}
         </Script>
-        <meta name="google-site-verification" content="0iWx9eFtGkDuB5YO9f1TtwYL829AvzxrWzUbhcAZ9vE" />
+        <meta
+          name="google-site-verification"
+          content="0iWx9eFtGkDuB5YO9f1TtwYL829AvzxrWzUbhcAZ9vE"
+        />
       </head>
-      <body
-        className={`${oxigen.variable} ${montserrat.variable} antialiased`}
-      >
-        <Header/>
+      <body className={`${oxigen.variable} ${montserrat.variable} antialiased`}>
+        <Header />
         {children}
       </body>
     </html>
