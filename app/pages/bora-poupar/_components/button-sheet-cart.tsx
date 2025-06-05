@@ -19,10 +19,12 @@ const ButtonSheetCart = () => {
         </div>
         <span className="text-xs">Compras</span>
       </SheetTrigger>
-      <SheetContent className="border-dotted border-neutral-400 bg-neutral-800">
+      <SheetContent className="border-neutral- border-dotted bg-neutral-800 p-0 md:px-2">
         <SheetHeader>
-          <SheetTitle className="text-emerald-400">Bora Poupar ?</SheetTitle>
-          <SheetDescription className="text-neutral-400">
+          <SheetTitle className="text-center text-emerald-400">
+            Bora Poupar ?
+          </SheetTitle>
+          <SheetDescription className="text-center text-neutral-400">
             Gerencie suas compras, nunca mais passe perengue no caixa.
           </SheetDescription>
         </SheetHeader>

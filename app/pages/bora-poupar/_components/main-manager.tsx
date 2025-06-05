@@ -4,7 +4,6 @@ import ShowMetrics from './show-metrics';
 import FormAddValueInitial from './form-add-value-initial';
 import { BoraPouparContext } from '@/app/context/boraPouparContext';
 import FormAddCart from './form-add-cart';
-import NavFooter from './nav-footer';
 
 const MainManager = () => {
   const { metrics } = useContext(BoraPouparContext);
@@ -14,7 +13,6 @@ const MainManager = () => {
       <ShowMetrics />
       <FormAddValueInitial />
       {metrics.totalValue > 0 && <FormAddCart />}
-      <NavFooter />
     </div>
   );
 };

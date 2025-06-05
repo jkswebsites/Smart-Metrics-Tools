@@ -2,6 +2,7 @@ import React from 'react';
 import MainManager from './_components/main-manager';
 import type { Metadata } from 'next';
 import { BoraPouparContextProvider } from '@/app/context/boraPouparContext';
+import NavFooter from './_components/nav-footer';
 export const metadata: Metadata = {
   title: 'Bora Poupar',
   keywords: 'Bora Poupar, poupar, investimento, econômia, controle de gastos',
@@ -13,6 +14,7 @@ const BoraPouparPage = () => {
     <main className="h-full w-full">
       <BoraPouparContextProvider>
         <MainManager />
+        <NavFooter />
       </BoraPouparContextProvider>
     </main>
   );
