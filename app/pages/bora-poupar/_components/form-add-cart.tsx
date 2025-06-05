@@ -76,6 +76,7 @@ const FormAddCart = () => {
                 required: true,
                 setValueAs: (value: string): number => Number(value),
               })}
+              step={'0.01'}
               type="number"
               inputMode="numeric"
               className={`w-[80%] rounded-md border border-neutral-700 bg-neutral-800 py-2 pl-5 text-2xl font-bold tracking-wider text-neutral-100 outline-none placeholder:text-xl placeholder:italic focus:border-neutral-500`}
