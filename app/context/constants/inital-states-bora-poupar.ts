@@ -4,5 +4,5 @@ export const initialState: BoraPoupar = {
   totalValue: 0,
   valueCurrent: 0,
   totalSpent: 0,
-  item: '',
+  cart: [],
 };

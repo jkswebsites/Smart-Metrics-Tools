@@ -61,7 +61,6 @@ const FormTotalValue = () => {
           )}
         </label>
       </div>
-<<<<<<< HEAD
       <button
         disabled={isSubmitting}
         className="mx-2 rounded-lg bg-green-700 p-2 text-2xl"
@@ -72,14 +71,6 @@ const FormTotalValue = () => {
         ) : (
           <CgSpinnerTwo className="animate-spin" />
         )}
-=======
-
-      <button disabled={isSubmitting} type='submit' className=' bg-green-700 text-2xl p-2 mx-2 rounded-lg' title='add'>
-        {
-          !isSubmitting ? <FaRegPlusSquare /> : <CgSpinnerTwo className='animate-spin'/>
-
-        }
->>>>>>> e655a0d45ca3b26fec42a2ffbd89184021df4c25
       </button>
     </form>
   );

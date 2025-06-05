@@ -2,23 +2,46 @@
 import { BoraPouparContext } from '@/app/context/boraPouparContext';
 import { Button } from '@/components/ui/button';
 import React, { useContext } from 'react';
-import { useForm, SubmitHandler } from 'react-hook-form';
-import { FaSquarePlus } from 'react-icons/fa6';
-interface IFormAddCart {
+import { useForm, SubmitHandler, FieldErrors } from 'react-hook-form';
+
+export interface IFormAddCart {
   item: string;
   amount: number;
   price: number;
 }
 
 const FormAddCart = () => {
-  const { addValueTotal } = useContext(BoraPouparContext);
+  const { addItemCart } = useContext(BoraPouparContext);
   const {
     register,
     handleSubmit,
     resetField,
+    setFocus,
     formState: { errors, isSubmitting },
   } = useForm<IFormAddCart>({ defaultValues: { amount: 1 } });
-  const onSubmit: SubmitHandler<IFormAddCart> = (data) => {};
+
+  const onSubmit: SubmitHandler<IFormAddCart> = (data) => {
+    addItemCart({
+      ...data,
+      item: data.item.length > 0 ? data.item : 'item',
+    });
+
+    resetFields();
+  };
+  const resetFields = () => {
+    resetField('item');
+    resetField('price');
+    resetField('amount');
+    setFocus('item');
+  };
+  const fieldIsEmpty = (
+    _error: FieldErrors<IFormAddCart>,
+    key: keyof IFormAddCart
+  ) => {
+    return _error[`${key}`]?.type === 'required'
+      ? 'text-red-600'
+      : 'text-neutral-300';
+  };
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
@@ -38,31 +61,33 @@ const FormAddCart = () => {
           />
           <span className="relative -top-5 left-2 inline-block">*</span>
         </div>
-        {errors.item?.type === 'required' && (
-          <p className="ml-2 mt-1 text-xs tracking-wider text-red-600">
-            Esse campo é obrigatório!
-          </p>
-        )}
       </label>
 
       <div className="mt-3 flex w-full items-center justify-between">
         <label className="w-[70%]">
           <div className="w-full">
-            <span className="block text-sm font-bold italic tracking-wider text-neutral-300">
+            <span
+              className={`${fieldIsEmpty(errors, 'price')} block text-sm font-bold italic tracking-wider text-neutral-300`}
+            >
               Preço:
             </span>
             <input
               {...register('price', {
-                setValueAs: (value: string) => Number(value),
+                required: true,
+                setValueAs: (value: string): number => Number(value),
               })}
               type="number"
               inputMode="numeric"
               className={`w-[80%] rounded-md border border-neutral-700 bg-neutral-800 py-2 pl-5 text-2xl font-bold tracking-wider text-neutral-100 outline-none placeholder:text-xl placeholder:italic focus:border-neutral-500`}
               placeholder="R$:0,00"
             />
-            <span className="relative -top-5 left-2 inline-block">*</span>
+            <span
+              className={`${fieldIsEmpty(errors, 'price')} relative -top-5 left-2 inline-block`}
+            >
+              *
+            </span>
           </div>
-          {errors.item?.type === 'required' && (
+          {errors.price?.type === 'required' && (
             <p className="ml-2 mt-1 text-xs tracking-wider text-red-600">
               Esse campo é obrigatório!
             </p>
@@ -72,12 +97,13 @@ const FormAddCart = () => {
         <label className="w-[40%]">
           <div className="w-full">
             <span
-              className={`${errors.amount?.message === 'required' ? 'text-red-600' : 'text-neutral-300'} block text-xs font-bold italic tracking-wider`}
+              className={`${fieldIsEmpty(errors, 'amount')} block text-xs font-bold italic tracking-wider`}
             >
               Quantidade:
             </span>
             <input
               {...register('amount', {
+                required: true,
                 setValueAs: (value: string) => Number(value),
               })}
               type="number"
@@ -86,7 +112,11 @@ const FormAddCart = () => {
               placeholder="0"
               min={1}
             />
-            <span className="relative -top-5 left-2 inline-block">*</span>
+            <span
+              className={`${fieldIsEmpty(errors, 'amount')} relative -top-5 left-2 inline-block`}
+            >
+              *
+            </span>
           </div>
         </label>
       </div>
@@ -97,6 +127,13 @@ const FormAddCart = () => {
         className="mx-auto mt-4 block w-4/5 bg-emerald-400 text-neutral-950"
       >
         Confirmar
+      </Button>
+      <Button
+        type="reset"
+        title="Cancelar"
+        className="mx-auto mt-4 block w-4/5 bg-neutral-800 hover:bg-neutral-950"
+      >
+        Cancelar
       </Button>
     </form>
   );
