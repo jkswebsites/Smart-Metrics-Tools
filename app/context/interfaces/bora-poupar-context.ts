@@ -11,5 +11,5 @@ export interface ContextBoraPoupar {
   addValueTotal: (totalValue: number) => void;
   addItemCart: (dataCart: IFormAddCart) => void;
   resetAll: () => void;
-  deleteItem: (item: string) => void;
+  deleteItem: (item: string, currencyValue: number) => void;
 }

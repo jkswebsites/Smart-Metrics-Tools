@@ -87,26 +87,19 @@ export const BoraPouparContextProvider = ({ children }: IReactNode) => {
       setCallStorage(true);
     }
   };
-  const deleteItem = (item: string) => {
+  const deleteItem = (id: string, currencyValue: number) => {
     if (checkIfWindowIsUndefined()) {
       const metricsStorage = sessionStorage.getItem('metrics-data');
       if (metricsStorage) {
         const parseMetrics: BoraPoupar = JSON.parse(metricsStorage);
 
         const filterItems = parseMetrics.cart.filter(
-          (product) => product.item !== item
+          (product) => product.id !== id
         );
-        const totalCurrent =
-          filterItems.length > 0
-            ? filterItems.reduce(
-                (acc, curr) => curr.amount * curr.price + acc,
-                0
-              )
-            : parseMetrics.totalValue;
 
         const updateCart: BoraPoupar = {
           ...parseMetrics,
-          valueCurrent: totalCurrent,
+          valueCurrent: parseMetrics.valueCurrent + currencyValue,
           totalSpent: filterItems.reduce(
             (acc, curr) => curr.amount * curr.price + acc,
             0

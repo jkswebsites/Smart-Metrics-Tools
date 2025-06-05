@@ -3,8 +3,10 @@ import { BoraPouparContext } from '@/app/context/boraPouparContext';
 import { Button } from '@/components/ui/button';
 import React, { useContext } from 'react';
 import { useForm, SubmitHandler, FieldErrors } from 'react-hook-form';
+import { v4 as uuidv4 } from 'uuid';
 
 export interface IFormAddCart {
+  id: string;
   item: string;
   amount: number;
   price: number;
@@ -23,6 +25,7 @@ const FormAddCart = () => {
   const onSubmit: SubmitHandler<IFormAddCart> = (data) => {
     addItemCart({
       ...data,
+      id: uuidv4(),
       item: data.item.length > 0 ? data.item : 'item',
     });
 

@@ -9,9 +9,7 @@ import { MdOutlineShoppingCartCheckout } from 'react-icons/md';
 
 const CartItems = () => {
   const { metrics, deleteItem } = useContext(BoraPouparContext);
-  const handleDeleteItem = (item: string) => {
-    deleteItem(item);
-  };
+
   return (
     <div className="mx-auto mt-7 rounded-md p-2">
       {metrics.cart.length > 0 ? (
@@ -38,7 +36,9 @@ const CartItems = () => {
                 </div>
                 <Button
                   variant={'destructive'}
-                  onClick={() => handleDeleteItem(product.item)}
+                  onClick={() =>
+                    deleteItem(product.id, product.price * product.amount)
+                  }
                 >
                   <BsCartXFill />
                 </Button>
