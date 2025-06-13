@@ -3,6 +3,7 @@ import MainManager from './_components/main-manager';
 import type { Metadata } from 'next';
 import { BoraPouparContextProvider } from '@/app/context/boraPouparContext';
 import NavFooter from './_components/nav-footer';
+import ImageCard from '@/components/image-card';
 export const metadata: Metadata = {
   title: 'Bora Poupar',
   keywords: 'Bora Poupar, poupar, investimento, econômia, controle de gastos',
@@ -13,6 +14,7 @@ const BoraPouparPage = () => {
   return (
     <main className="h-full w-full">
       <BoraPouparContextProvider>
+        <ImageCard />
         <MainManager />
         <NavFooter />
       </BoraPouparContextProvider>

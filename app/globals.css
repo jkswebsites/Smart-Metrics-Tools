@@ -7,19 +7,20 @@
   padding: 0;
   box-sizing: border-box;
 }
-:root, html, body {
-  @apply w-full h-full;
-
+:root,
+html,
+body {
+  @apply h-full w-full;
 }
 body {
-  @apply bg-neutral-950 text-neutral-200 h-full;
+  @apply bg-neutral-950 text-neutral-200;
 }
 .smootTransition {
- transition: all .1s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 .smootTransitionMenu {
-  transition: all .5s ease-in-out;
- }
+  transition: all 0.5s ease-in-out;
+}
 
 @layer base {
   :root {
