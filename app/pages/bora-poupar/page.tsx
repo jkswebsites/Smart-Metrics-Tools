@@ -16,6 +16,7 @@ const BoraPouparPage = () => {
       <BoraPouparContextProvider>
         <ImageCard />
         <MainManager />
+        <div className="h-[200px]"></div>
         <NavFooter />
       </BoraPouparContextProvider>
     </main>
