@@ -23,7 +23,7 @@ export const BoraPouparContextProvider = ({ children }: IReactNode) => {
 
   const addValueTotal = (totalValue: number) => {
     if (checkIfWindowIsUndefined()) {
-      const metricsStorage = sessionStorage.getItem('metrics-data');
+      const metricsStorage = localStorage.getItem('metrics-data');
 
       if (metricsStorage) {
         const metricsData: BoraPoupar = JSON.parse(metricsStorage);
@@ -33,21 +33,21 @@ export const BoraPouparContextProvider = ({ children }: IReactNode) => {
           valueCurrent: metricsData.valueCurrent + totalValue,
         };
 
-        sessionStorage.setItem('metrics-data', JSON.stringify(upadateMetrics));
+        localStorage.setItem('metrics-data', JSON.stringify(upadateMetrics));
       } else {
         const upadateMetrics: BoraPoupar = {
           ...metrics,
           totalValue,
           valueCurrent: totalValue,
         };
-        sessionStorage.setItem('metrics-data', JSON.stringify(upadateMetrics));
+        localStorage.setItem('metrics-data', JSON.stringify(upadateMetrics));
       }
     }
     setCallStorage(true);
   };
   const updateMetrics = () => {
     if (checkIfWindowIsUndefined()) {
-      const metricsStorage = sessionStorage.getItem('metrics-data');
+      const metricsStorage = localStorage.getItem('metrics-data');
       if (metricsStorage) {
         const parseMetrics: BoraPoupar = JSON.parse(metricsStorage);
         const calculateTotalCart = parseMetrics.cart.reduce(
@@ -61,14 +61,14 @@ export const BoraPouparContextProvider = ({ children }: IReactNode) => {
           totalSpent: calculateTotalCart,
         };
 
-        sessionStorage.setItem('metrics-data', JSON.stringify(managerCart));
+        localStorage.setItem('metrics-data', JSON.stringify(managerCart));
         setCallStorage(true);
       }
     }
   };
   const addItemCart = (dataCart: IFormAddCart) => {
     if (checkIfWindowIsUndefined()) {
-      const metricsStorage = sessionStorage.getItem('metrics-data');
+      const metricsStorage = localStorage.getItem('metrics-data');
       if (metricsStorage) {
         const parseMetrics: BoraPoupar = JSON.parse(metricsStorage);
         const managerCart: BoraPoupar = {
@@ -76,20 +76,20 @@ export const BoraPouparContextProvider = ({ children }: IReactNode) => {
           cart: [...parseMetrics.cart, dataCart],
         };
 
-        sessionStorage.setItem('metrics-data', JSON.stringify(managerCart));
+        localStorage.setItem('metrics-data', JSON.stringify(managerCart));
         updateMetrics();
       }
     }
   };
   const resetAll = () => {
     if (checkIfWindowIsUndefined()) {
-      sessionStorage.removeItem('metrics-data');
+      localStorage.removeItem('metrics-data');
       setCallStorage(true);
     }
   };
   const deleteItem = (id: string, currencyValue: number) => {
     if (checkIfWindowIsUndefined()) {
-      const metricsStorage = sessionStorage.getItem('metrics-data');
+      const metricsStorage = localStorage.getItem('metrics-data');
       if (metricsStorage) {
         const parseMetrics: BoraPoupar = JSON.parse(metricsStorage);
 
@@ -106,7 +106,7 @@ export const BoraPouparContextProvider = ({ children }: IReactNode) => {
           ),
           cart: filterItems,
         };
-        sessionStorage.setItem('metrics-data', JSON.stringify(updateCart));
+        localStorage.setItem('metrics-data', JSON.stringify(updateCart));
         setCallStorage(true);
       }
     }
@@ -114,7 +114,7 @@ export const BoraPouparContextProvider = ({ children }: IReactNode) => {
   useEffect(() => {
     try {
       if (typeof window !== 'undefined') {
-        const metricsStorage = sessionStorage.getItem('metrics-data');
+        const metricsStorage = localStorage.getItem('metrics-data');
         if (metricsStorage) {
           const parseMetrics: BoraPoupar = JSON.parse(metricsStorage);
           setMetrics(parseMetrics);
