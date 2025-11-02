@@ -4,7 +4,7 @@ import { FaLinkedin } from 'react-icons/fa6';
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col items-center justify-start py-4">
+    <footer className="relative bottom-0 flex flex-col items-center justify-start py-4">
       <Link
         className="flex items-center gap-2"
         href={'https://www.linkedin.com/in/jacksoncajui/'}

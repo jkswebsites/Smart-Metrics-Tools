@@ -1,7 +1,7 @@
 import { SiHappycow } from 'react-icons/si';
-import { TiShoppingCart } from 'react-icons/ti';
+import { IoFastFoodOutline } from 'react-icons/io5';
 
 export const navLinks = [
-  { name: 'SmartBuy', path: '/', icon: TiShoppingCart },
+  { name: 'IFoodFácil', path: '/', icon: IoFastFoodOutline },
   { name: 'Bora Poupar', path: '/pages/bora-poupar', icon: SiHappycow },
 ];
