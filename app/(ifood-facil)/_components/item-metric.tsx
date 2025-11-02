@@ -6,15 +6,14 @@ interface ItemMetricProps {
 }
 const ItemMetric = ({ label, value }: ItemMetricProps) => {
   return (
-    <li className="flex items-center justify-between rounded-md border border-emerald-300 bg-neutral-950 p-2">
-      <span className="font-oxygen text-sm font-light tracking-widest">
-        {label}:
-      </span>
-
-      <span className="font-oxygen text-2xl font-black tracking-widest text-green-400">
-        {formatBR(value)}
-      </span>
-    </li>
+    <div className="flex flex-col items-center justify-center">
+      <div className="w-[200px] border-b border-neutral-600 pb-2">
+        <h6 className="font-oxygen text-center text-sm">{label}</h6>
+        <p className="text-center text-3xl font-bold text-emerald-400">
+          {formatBR(value)}
+        </p>
+      </div>
+    </div>
   );
 };
 
