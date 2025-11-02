@@ -10,7 +10,6 @@ export interface IMetrics {
 }
 const MainManager = () => {
   const [metrics, setMetrics] = useState<IMetrics | null>(null);
-  console.log(metrics);
 
   return (
     <>

@@ -29,15 +29,18 @@ export default function Home() {
           <Article>
             <Subtitle firstWord="IFood" secoundtWord="Fácil" />
             <Paragraph>
-              <span className="font-sans text-2xl font-light text-neutral-100">
+              <strong className="font-sans text-2xl font-light text-neutral-100">
                 IFood
-              </span>
-              <span className="font-oxygen text-2xl font-black text-emerald-500">
+              </strong>
+              <strong className="font-oxygen text-2xl font-black text-emerald-500">
                 Fácil
-              </span>{' '}
+              </strong>{' '}
               é uma aplicação web que visa ajudar vendedores do{' '}
-              <strong>IFood</strong> a calcular o preço de venda dos seus
-              produtos.
+              <strong className="text-emerald-400">IFood</strong> a precificar
+              seus produtos no ifood. Essa ferramenta é ideal para
+              microempreendedores, restaurantes, lanchonetes e dark kitchens que
+              buscam otimizar seus preços e aumentar a rentabilidade dentro do
+              marketplace.
             </Paragraph>
           </Article>
         </section>

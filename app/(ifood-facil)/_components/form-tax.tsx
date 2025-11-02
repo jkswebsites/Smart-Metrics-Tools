@@ -32,7 +32,7 @@ const FormTax = ({ setMetris }: FormTaxProps) => {
     const valueTotalOfSell = calculateValueOfSell(valueOfSell, valueIfood);
     setMetris({
       taxIfood: valueIfood,
-      myPrice: valueOfSell,
+      myPrice: valueTotalOfSell - valueIfood,
       valueOfSell: valueTotalOfSell,
     });
     window.scrollBy({

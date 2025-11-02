@@ -10,8 +10,8 @@ const ShowMetrics = ({ valueOfSell, taxIfood, myPrice }: IMetrics) => {
       </h2>
 
       <ul className="mt-4 space-y-3">
-        <ItemMetric label="Valor de Venda" value={valueOfSell} />
-        <ItemMetric label="Custo + Lucro" value={myPrice} />
+        <ItemMetric label="Valor de venda no IFood" value={valueOfSell} />
+        <ItemMetric label="Seu valor de venda" value={myPrice} />
         <ItemMetric label="Taxa do IFood" value={taxIfood} />
       </ul>
     </div>
