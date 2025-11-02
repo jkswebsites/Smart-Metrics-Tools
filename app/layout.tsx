@@ -64,6 +64,7 @@ export default function RootLayout({
       <body className={`${oxigen.variable} ${montserrat.variable} antialiased`}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
