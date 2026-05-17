@@ -10,12 +10,9 @@ const NavbarMobile = () => {
   return (
     <SheetContent className="border-dotted border-neutral-500 bg-neutral-800">
       <SheetHeader>
-        <SheetTitle className="text-emerald-500">
-          Smart Metrics Tools
-        </SheetTitle>
+        <SheetTitle className="text-emerald-500">Mundo dos Apps.</SheetTitle>
         <SheetDescription className="text-white">
-          Criamos diversas ferramentas web para facilitar sua vida, confira nos
-          link abaixo.
+          facilitando sua vida com aplicaticos.
         </SheetDescription>
       </SheetHeader>
       <ContainerLinks />

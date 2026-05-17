@@ -13,9 +13,12 @@ const CartItems = () => {
   return (
     <div className="mx-auto mt-7 rounded-md p-2">
       {metrics.cart.length > 0 ? (
-        <div className="space-y-2">
+        <div className="h-[500px] space-y-2 overflow-y-auto px-2">
           {metrics.cart.map((product, index) => (
-            <div key={index} className="rounded-xl bg-neutral-900 p-2">
+            <div
+              key={index}
+              className="rounded-xl border border-emerald-400 bg-neutral-900 p-2"
+            >
               <p className="font-bold tracking-wide text-emerald-400">
                 <MdOutlineShoppingCartCheckout className="mr-2 inline-block rounded-full text-2xl text-neutral-300" />
                 {product.item}
@@ -23,16 +26,18 @@ const CartItems = () => {
               <div className="flex items-center justify-between">
                 <div className="space-x-2">
                   <span className="font-bold text-neutral-200">
-                    {product.price}
+                    {formatBR(product.price)}
                   </span>
                   <span>X</span>
                   <span className="font-bold text-neutral-200">
                     {product.amount}
                   </span>
                   <span>=</span>
-                  <span className="font-bold text-neutral-200">
-                    {formatBR(product.price * product.amount)}
-                  </span>
+                  <>
+                    <span className="font-oxygen text-lg font-bold text-emerald-500">
+                      {formatBR(product.price * product.amount)}
+                    </span>
+                  </>
                 </div>
                 <Button
                   variant={'destructive'}

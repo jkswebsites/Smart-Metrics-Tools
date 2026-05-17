@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import { BoraPouparContextProvider } from '@/app/context/boraPouparContext';
 import NavFooter from './_components/nav-footer';
 import { ImageCard, ImageContent, TitleContent } from '@/components/image-card';
+import Article from './_components/article';
 
 export const metadata: Metadata = {
   title: 'Bora Poupar',
@@ -20,6 +21,7 @@ const BoraPouparPage = () => {
           <ImageContent path="/vaca-bora-poupar.png" />
         </ImageCard>
         <MainManager />
+        <Article />
         <div className="h-[200px]"></div>
         <NavFooter />
       </BoraPouparContextProvider>

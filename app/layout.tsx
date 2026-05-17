@@ -4,18 +4,17 @@ import { Oxygen, Montserrat } from 'next/font/google';
 import './globals.css';
 import Header from './_components/header';
 import Script from 'next/script';
-import Footer from './_components/footer';
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Smart Metrics Tools',
-    default: 'Bora Poupar! | Smart Metrics Tools',
-    template: '%s | Smart Metrics Tools',
+    absolute: 'Mundo dos Apps. ',
+    default: 'Bora Poupar! | Mundo dos Apps',
+    template: '%s | Mundo dos Apps',
   },
   description:
-    'Seu Orçamento é um aplicativo para ajudar pessoas há gerenciar suas compras, evitando que o valor passe do valor que você tem em mãos, como esse aplicativo suas compras sempre estarão sobre controle.',
+    'Mundo dos Apps, facilitando sua vida com aplicativos! é um conjunto de ferramentas web que tem como objetivo forncer ferramentas para ajudar a você no seu cotidiano ',
   keywords:
-    'Seu Orçamento., Bora Poupar  Smart Metrics Tools, dinheiro, orçamento, controle de gasto, economida, inteligência financeira',
+    'Seu Orçamento, Bora Poupar - Mundo dos Apps, metricas, dinheiro, orçamento, controle de gasto, economida, inteligência financeira',
   icons: {
     icon: ['./icon.png'],
     apple: ['./icon.png'],
@@ -41,7 +40,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="pt-br">
       <head>
         <Script
           async
