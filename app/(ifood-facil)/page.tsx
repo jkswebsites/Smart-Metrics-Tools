@@ -3,7 +3,7 @@ import { ContextSmartBuyProvider } from '@/app/context/smart-buy-context';
 import { Metadata } from 'next';
 import { ImageCard, ImageContent, TitleContent } from '@/components/image-card';
 import MainManager from './_components/main-manager';
-import { Article, Paragraph, Subtitle } from '../_components/article';
+import { Article, Paragraph } from '../_components/article';
 
 export const metadata: Metadata = {
   title: 'IFood Fácil',
