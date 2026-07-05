@@ -1,16 +1,28 @@
 import Image from 'next/image';
 import React from 'react';
 import imgBuy from '@/app/assets/images/women-supermarket.png';
+import imgSaturno from '@/app/assets/images/saturno-app.png';
 const Article = () => {
   return (
     <article className="mx-auto mt-[50px] w-4/5 sm:w-[500px]">
       <header className="my-5">
-        <h1 className="text-3xl font-black text-neutral-200">
-          Bora Poupar App
-        </h1>
-        <p className="text-xs italic text-neutral-500">
-          Publicado por: <strong>J. Tiago</strong>
-        </p>
+        <div className="relative w-full overflow-hidden rounded-lg">
+          <Image
+            src={imgSaturno}
+            width={0}
+            height={0}
+            className="block"
+            alt="Bora Poupar App mulher economia"
+          />
+        </div>
+        <div className="rounded-lg bg-neutral-950">
+          <h1 className="text-3xl font-black text-neutral-200">
+            Bora Poupar App
+          </h1>
+          <p className="text-xs italic text-neutral-500">
+            Publicado por: <strong>J. Tiago</strong>
+          </p>
+        </div>
       </header>
 
       <section>
@@ -28,14 +40,15 @@ const Article = () => {
       </section>
       <div className="relative mx-auto h-[250px] w-full overflow-hidden rounded-lg">
         <div className="to -transparent absolute h-full w-full bg-gradient-to-t from-neutral-950"></div>
-        <h2 className="text-custom-secondary absolute bottom-3 left-3 text-2xl font-bold">
-          Bora Poupar App.
+        <h2 className="absolute bottom-3 left-3 text-2xl font-extralight italic">
+          Você sempre no Controle.
         </h2>
         <Image
           src={imgBuy}
           width={0}
           height={0}
           alt="Bora Poupar App mulher economia"
+          className="block"
         />
       </div>
       <section>
