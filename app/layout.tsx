@@ -1,21 +1,21 @@
+import './globals.css';
 import React from 'react';
 import type { Metadata } from 'next';
 import { Oxygen, Montserrat } from 'next/font/google';
-import './globals.css';
 import Header from './_components/header';
 import Script from 'next/script';
 import Footer from './_components/footer';
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Mundo dos Apps. ',
-    default: 'Bora Poupar! | Mundo dos Apps',
-    template: '%s | Mundo dos Apps',
+    absolute: 'Saturno Apps. ',
+    default: 'Bora Poupar! | Saturno Apps',
+    template: '%s | Saturno Apps.',
   },
   description:
-    'Mundo dos Apps, facilitando sua vida com aplicativos! é um conjunto de ferramentas web que tem como objetivo forncer ferramentas para ajudar a você no seu cotidiano ',
+    'Saturno Apps, facilitando sua vida com aplicativos! é um conjunto de ferramentas web que tem como objetivo forncer ferramentas para ajudar a você no seu cotidiano ',
   keywords:
-    'Seu Orçamento, Bora Poupar - Mundo dos Apps, metricas, dinheiro, orçamento, controle de gasto, economida, inteligência financeira',
+    'Seu Orçamento, Bora Poupar - Saturno Apps, metricas, dinheiro, orçamento, controle de gasto, economida, inteligência financeira',
   icons: {
     icon: ['./icon.png'],
     apple: ['./icon.png'],

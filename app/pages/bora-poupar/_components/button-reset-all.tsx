@@ -6,10 +6,7 @@ import { AiOutlineClear } from 'react-icons/ai';
 const ButtonResetAll = () => {
   const { resetAll } = useContext(BoraPouparContext);
   return (
-    <button
-      onClick={() => resetAll()}
-      className="text-emerald-400 hover:scale-110"
-    >
+    <button onClick={() => resetAll()} className="text-white hover:scale-110">
       <div className="rounded-lg bg-neutral-800 p-2">
         <AiOutlineClear className="mx-auto text-2xl" />
       </div>

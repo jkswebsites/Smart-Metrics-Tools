@@ -1,16 +1,18 @@
 import Link from 'next/link';
 import React from 'react';
-import { GiWireframeGlobe } from 'react-icons/gi';
+import { SiSaturn } from 'react-icons/si';
 
 const LogoComponent = () => {
   return (
-    <Link href="/">
-      <div className="flex items-center justify-center pl-6">
-        <GiWireframeGlobe className="text-3xl text-white" />
-        <h1 className="italic">
-          <span className="font-bold text-yellow-400">Mundo</span>
-          DoApps
-        </h1>
+    <Link href="/" className="h-full w-fit">
+      <div className="from-custom-secondary -ml-3 flex h-full -skew-x-[20deg] items-center justify-center bg-gradient-to-r px-5">
+        <SiSaturn className="text-5xl drop-shadow-lg" />
+        <div className="ml-2">
+          <h1 className="font-oxygen text-2xl font-bold">Saturno</h1>
+          <h3 className="font-montserrat -mt-2 text-left text-neutral-950">
+            Apps
+          </h3>
+        </div>
       </div>
     </Link>
   );

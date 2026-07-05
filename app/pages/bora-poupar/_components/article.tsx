@@ -1,19 +1,22 @@
+import Image from 'next/image';
 import React from 'react';
-
+import imgBuy from '@/app/assets/images/women-supermarket.png';
 const Article = () => {
   return (
     <article className="mx-auto mt-[50px] w-4/5 sm:w-[500px]">
       <header className="my-5">
-        <h1 className="text-3xl font-black text-neutral-200">Bora Poupar.</h1>
+        <h1 className="text-3xl font-black text-neutral-200">
+          Bora Poupar App
+        </h1>
         <p className="text-xs italic text-neutral-500">
           Publicado por: <strong>J. Tiago</strong>
         </p>
       </header>
 
       <section>
-        <h2 className="my-3 text-2xl">O que é o Bora Poupar?</h2>
+        <h2 className="my-3 text-2xl">O que é o Bora Poupar App?</h2>
         <p className="text-xl leading-loose tracking-wide">
-          <strong className="text-emerald-400">Bora Poupar</strong> é uma
+          <strong className="text-emerald-400">Bora Poupar App</strong> é uma
           aplicação web, que tem como finalidade e ajudar pessoas a gerenciar
           seu orçamento no momento de suas compras, onde inicialmente é definido
           o valor que o usuário definiu para gastar por exemplo em um super
@@ -23,7 +26,18 @@ const Article = () => {
           inicialmente.
         </p>
       </section>
-
+      <div className="relative mx-auto h-[250px] w-full overflow-hidden rounded-lg">
+        <div className="to -transparent absolute h-full w-full bg-gradient-to-t from-neutral-950"></div>
+        <h2 className="text-custom-secondary absolute bottom-3 left-3 text-2xl font-bold">
+          Bora Poupar App.
+        </h2>
+        <Image
+          src={imgBuy}
+          width={0}
+          height={0}
+          alt="Bora Poupar App mulher economia"
+        />
+      </div>
       <section>
         <h2 className="my-3 text-2xl">
           💰 Controle suas compras sem sair do orçamento!

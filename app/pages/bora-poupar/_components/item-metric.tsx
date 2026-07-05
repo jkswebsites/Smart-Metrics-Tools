@@ -7,7 +7,7 @@ const cardMetric = tv({
   base: 'mx-auto mt-5 flex to-neutral-900 size-24 h-[60px] w-full px-7 items-center justify-between rounded-lg bg-gradient-to-r',
   variants: {
     color: {
-      primary: 'from-green-500 ',
+      primary: 'from-green-500',
       secundary: 'from-red-400',
       dark: 'from-neutral-700',
     },

@@ -14,8 +14,8 @@ const ButtonSheetCart = () => {
   return (
     <Sheet>
       <SheetTrigger className="hover:scale-110">
-        <div className="rounded-md bg-emerald-500 p-3">
-          <BsCart4 className="mx-auto text-2xl text-neutral-800" />
+        <div className="bg-custom-secondary rounded-md p-3">
+          <BsCart4 className="mx-auto text-2xl text-neutral-100" />
         </div>
         <span className="text-xs">Compras</span>
       </SheetTrigger>
