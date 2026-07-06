@@ -40,6 +40,13 @@ const Footer = () => {
           />
         </Link>
       </div>
+      <nav className="mx-auto mt-2 flex w-4/5 items-center justify-center gap-3 lg:w-96">
+        <Link href={'/pages/politica-de-privacidade'}>
+          Políticas de Privacidade |
+        </Link>
+
+        <Link href={'/pages/politica-de-privacidade'}>Sobre Saturno apps.</Link>
+      </nav>
     </footer>
   );
 };
