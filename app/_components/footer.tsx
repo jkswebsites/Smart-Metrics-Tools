@@ -45,7 +45,7 @@ const Footer = () => {
           Políticas de Privacidade |
         </Link>
 
-        <Link href={'/pages/politica-de-privacidade'}>Sobre Saturno apps.</Link>
+        <Link href={'/pages/about-us'}>Sobre Saturno apps.</Link>
       </nav>
     </footer>
   );
