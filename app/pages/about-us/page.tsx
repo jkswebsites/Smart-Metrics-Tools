@@ -12,7 +12,7 @@ const AboutSaturnoApp = () => {
       <div className="relative z-0 h-[150px] w-full overflow-hidden">
         <Image
           src={imgSaturno}
-          alt="Saturno Apps Web"
+          alt="Oficina Web"
           className="relative -top-[50px]"
           width={0}
           height={0}
@@ -20,9 +20,9 @@ const AboutSaturnoApp = () => {
       </div>
       <div className="relative z-10 mx-auto -mt-7 w-[99%] rounded-t-2xl bg-neutral-950 px-10 lg:w-[600px]">
         <ArticleSections>
-          <SubtitleH3>Sobre à Saturno Apps.</SubtitleH3>
+          <SubtitleH3>Sobre à Oficina Web</SubtitleH3>
           <Paragraph>
-            À <strong>Saturno Apps</strong> é uma plataforma criada com o
+            À <strong>Oficina Web</strong> é uma plataforma criada com o
             propósito de desenvolver ferramentas web simples, práticas e
             acessíveis que ajudem as pessoas a resolver problemas do dia a dia.
           </Paragraph>

@@ -16,9 +16,9 @@ const NavbarMobile = () => {
             <SiSaturn className="text-5xl text-neutral-50 drop-shadow-lg" />
             <p className="text-2xl">
               <span className="font-oxygen text-custom-secondary font-bold">
-                Saturno
+                Oficina
               </span>
-              <span className="font-thin text-neutral-50">Apps</span>
+              <span className="font-thin text-neutral-50">Web</span>
             </p>
           </div>
         </SheetTitle>

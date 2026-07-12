@@ -8,9 +8,9 @@ const LogoComponent = () => {
       <div className="from-custom-secondary -ml-3 flex h-full -skew-x-[20deg] items-center justify-center bg-gradient-to-r px-5">
         <SiSaturn className="text-5xl drop-shadow-lg" />
         <div className="ml-2">
-          <h1 className="font-oxygen text-2xl font-bold">Saturno</h1>
+          <h1 className="font-oxygen text-2xl font-bold">Oficina</h1>
           <h3 className="font-montserrat -mt-2 text-left text-neutral-950">
-            Apps
+            Web
           </h3>
         </div>
       </div>

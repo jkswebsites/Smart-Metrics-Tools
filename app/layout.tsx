@@ -8,14 +8,14 @@ import Footer from './_components/footer';
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Saturno Apps. ',
-    default: 'Bora Poupar! | Saturno Apps',
-    template: '%s | Saturno Apps.',
+    absolute: 'OficinaWeb. ',
+    default: 'Bora Poupar! | OficinaWeb',
+    template: '%s | OficinaWeb.',
   },
   description:
-    'Saturno Apps, facilitando sua vida com aplicativos! é um conjunto de ferramentas web que tem como objetivo forncer ferramentas para ajudar a você no seu cotidiano ',
+    'OficinaWeb, facilitando sua vida com aplicativos! é um conjunto de ferramentas web que tem como objetivo forncer ferramentas para ajudar a você no seu cotidiano ',
   keywords:
-    'Seu Orçamento, Bora Poupar - Saturno Apps, metricas, dinheiro, orçamento, controle de gasto, economida, inteligência financeira',
+    'Seu Orçamento, Bora Poupar - OficinaWeb, metricas, dinheiro, orçamento, controle de gasto, economida, inteligência financeira',
   icons: {
     icon: ['./icon.png'],
     apple: ['./icon.png'],

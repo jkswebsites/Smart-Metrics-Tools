@@ -40,12 +40,14 @@ const Footer = () => {
           />
         </Link>
       </div>
-      <nav className="mx-auto mt-2 flex w-4/5 items-center justify-center gap-3 lg:w-96">
+      <nav className="mx-auto mt-2 flex w-full flex-col items-center justify-center gap-3 lg:w-96">
         <Link href={'/pages/politica-de-privacidade'}>
-          Políticas de Privacidade |
+          Políticas de Privacidade
         </Link>
 
-        <Link href={'/pages/about-us'}>Sobre Saturno apps.</Link>
+        <Link href={'/pages/contatos'}>Página de Contatos.</Link>
+        <Link href={'/pages/about-us'}>Sobre OficinaWeb.</Link>
+        <Link href={'/pages/termos-de-uso'}>Termos de Uso.</Link>
       </nav>
     </footer>
   );

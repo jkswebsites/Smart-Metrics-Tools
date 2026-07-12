@@ -26,13 +26,13 @@ const PrivacyPolicyPage = () => {
           <h3 className="my-4">
             Bem vindo ao{' '}
             <span className="text-custom-secondary font-oxygen font-bold">
-              Saturno Apps.
+              Oficina Web.
             </span>
           </h3>
 
           <Paragraph>
             A sua privacidade é importante para nós. Esta Política de
-            Privacidade explica como o Saturno Apps utiliza as informações
+            Privacidade explica como o Oficina Web utiliza as informações
             durante a navegação em nosso site.
           </Paragraph>
         </article>
