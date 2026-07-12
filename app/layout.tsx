@@ -5,6 +5,7 @@ import { Oxygen, Montserrat } from 'next/font/google';
 import Header from './_components/header';
 import Script from 'next/script';
 import Footer from './_components/footer';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 export const metadata: Metadata = {
   title: {
@@ -44,10 +45,10 @@ export default function RootLayout({
     <html lang="pt-br">
       <head>
         <Script
-          async
           src="https://www.googletagmanager.com/gtag/js?id=G-N94M0078ZL"
+          strategy="afterInteractive"
         />
-        <Script>
+        <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
