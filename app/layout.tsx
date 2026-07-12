@@ -5,7 +5,6 @@ import { Oxygen, Montserrat } from 'next/font/google';
 import Header from './_components/header';
 import Script from 'next/script';
 import Footer from './_components/footer';
-import { GoogleAnalytics } from '@next/third-parties/google';
 
 export const metadata: Metadata = {
   title: {
