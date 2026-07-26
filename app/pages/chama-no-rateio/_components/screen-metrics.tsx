@@ -21,11 +21,11 @@ const ItemList = ({ label, value, isDecimal }: IListItem) => {
 };
 const ScreenMetrics = () => {
   return (
-    <div className="w-full">
+    <div className="mx-auto w-full sm:w-4/5">
       <ul className="mt-2 flex flex-col gap-1">
         <ItemList label="Valor Total:" value={0} isDecimal={true} />
         <ItemList label="Total para Cada:" value={0} isDecimal={true} />
-        <ItemList label="Participantes" value={0} isDecimal={false} />
+        <ItemList label="Participantes:" value={0} isDecimal={false} />
       </ul>
     </div>
   );

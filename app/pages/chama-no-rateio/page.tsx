@@ -4,6 +4,7 @@ import React from 'react';
 import chamaNoRateio from '@/app/assets/images/chama-no rateio.png';
 import ScreenMetrics from './_components/screen-metrics';
 import FormAddItem from './_components/form-add-item';
+import ListItem from './_components/list-item';
 export const metadata: Metadata = {
   title: 'Chama no Rateio Web',
   keywords:
@@ -44,6 +45,8 @@ const ChamaNoRateioPage = () => {
           </div>
         </div>
       </div>
+
+      <ListItem />
     </main>
   );
 };

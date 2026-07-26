@@ -1,6 +1,7 @@
 'use client';
+import { Button } from '@/components/ui/button';
 import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { SubmitHandler, useForm } from 'react-hook-form';
 import { tv } from 'tailwind-variants';
 
 const labelStyles = tv({
@@ -19,7 +20,7 @@ const inputStyles = tv({
   base: 'font-oxygen focus:border-custom-secondary border-neutral-400 transition-all duration-500 ease-in-out outline-none italic font-oxygen w-4/5 text-sm rounded-lg border bg-neutral-700 py-2 pl-2',
 });
 const buttonStyles = tv({
-  base: 'rounded-sm py-1 border border-neutral-700 hover:opacity-100 opacity-65 opacity transition-all duration-500 ease-in-',
+  base: 'rounded-sm py-1 w-full border border-neutral-700 hover:opacity-100 opacity-65 opacity transition-all duration-500 ease-in-',
   variants: {
     bg: {
       confirm:
@@ -41,7 +42,10 @@ const FormAddItem = () => {
   const [fieldFocused, setFieldFocused] = useState<string[]>([]);
   const {
     register,
-    formState: { errors },
+    setFocus,
+    resetField,
+    handleSubmit,
+    formState: { errors, isSubmitting },
   } = useForm<IInputs>({
     defaultValues: {
       nameItem: '',
@@ -58,9 +62,22 @@ const FormAddItem = () => {
       });
     }
   };
-
+  const handleReset = () => {
+    setFocus('nameItem');
+    setFieldFocused([]);
+  };
+  const onSubmit: SubmitHandler<IInputs> = (data) => {
+    console.log(data);
+    resetField('nameItem');
+    resetField('price');
+    resetField('quantity');
+    setFieldFocused([]);
+  };
   return (
-    <form className="flex flex-col gap-3 p-4">
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="mx-auto flex w-full flex-col justify-center gap-3 p-4 sm:w-4/5"
+    >
       <div>
         <label htmlFor="txt-name" className="relative">
           <span
@@ -137,11 +154,19 @@ const FormAddItem = () => {
           )}
         </div>
       </div>
-      <div className="mx-auto mt-2 flex flex-col gap-2 sm:w-[300px]">
-        <button type="submit" className={buttonStyles()}>
+      <div className="mx-auto mt-2 flex w-full flex-col items-center justify-center gap-2 sm:w-[300px]">
+        <button
+          type="submit"
+          disabled={isSubmitting}
+          className={buttonStyles()}
+        >
           Confirmar
         </button>
-        <button type="reset" className={buttonStyles({ bg: 'cancel' })}>
+        <button
+          type="reset"
+          onClick={handleReset}
+          className={buttonStyles({ bg: 'cancel' })}
+        >
           Cancelar
         </button>
       </div>
