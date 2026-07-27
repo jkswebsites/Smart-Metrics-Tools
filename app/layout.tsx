@@ -21,6 +21,8 @@ export const metadata: Metadata = {
     apple: ['./icon.png'],
     shortcut: ['./icon.png'],
   },
+  manifest: '/manifest.json',
+  themeColor: '#2563eb',
 };
 
 const oxigen = Oxygen({
