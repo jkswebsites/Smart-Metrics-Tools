@@ -69,6 +69,7 @@ const FormAddItem = () => {
     addItem({
       ...data,
       price: Number(data.price),
+      quantity: Number(data.quantity),
     });
     resetField('nameItem');
     resetField('price');
@@ -78,7 +79,7 @@ const FormAddItem = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="mx-auto flex w-full flex-col justify-center gap-3 p-4 sm:w-4/5"
+      className="mx-auto my-4 flex w-full flex-col justify-center gap-3 p-4 sm:w-4/5"
     >
       <div>
         <label htmlFor="txt-name" className="relative">

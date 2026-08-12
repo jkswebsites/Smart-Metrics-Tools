@@ -37,7 +37,9 @@ const ChamaNoRateioPage = () => {
           </div>
           <div>
             <h2>Em construção ainda não está funcionando!</h2>
-            <FactorRateio />
+            <div className="my-3">
+              <FactorRateio />
+            </div>
           </div>
         </div>
       </div>

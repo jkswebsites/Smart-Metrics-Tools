@@ -1,7 +1,8 @@
 'use client';
 import React from 'react';
-import { createContext, ReactNode, useEffect, useRef, useState } from 'react';
+import { createContext, ReactNode, useEffect, useState } from 'react';
 import { checkIfWindowIsUndefined } from '../helpers/storage-manager/checkWindow';
+import { v4 as uuidv4 } from 'uuid';
 interface IChildren {
   children: ReactNode;
 }
@@ -20,15 +21,17 @@ interface IRateioContext {
   metrics: IMetricsRateio;
   addItem: (data: IInputs) => void;
 }
+interface ICart extends IInputs {
+  id: string;
+}
 interface IMetricsManage {
-  cart: IInputs[];
+  cart: ICart[];
   metrics: IMetricsRateio;
 }
 const initialState: IMetricsManage = {
   cart: [],
   metrics: {
     valueTotal: 0,
-    quantityItem: 0,
     totalByPerson: 0,
     quantityPerson: 1,
   },
@@ -47,12 +50,16 @@ export const ContextChamaNoRateio = ({ children }: IChildren) => {
   const [callStorage, setCallStorage] = useState<boolean>(false);
 
   const addItem = (data: IInputs) => {
+    const fullData: ICart = {
+      ...data,
+      id: uuidv4(),
+    };
     if (checkIfWindowIsUndefined()) {
       const datasStorage = localStorage.getItem(keyStorage);
 
       if (datasStorage) {
         const parseStorage: IMetricsManage = JSON.parse(datasStorage);
-        const itemsCart = [...parseStorage.cart, data];
+        const itemsCart = [...parseStorage.cart, fullData];
         const accValueTotal = itemsCart.reduce(
           (acc, curr) => acc + curr.quantity * curr.price,
           0
@@ -68,9 +75,8 @@ export const ContextChamaNoRateio = ({ children }: IChildren) => {
         localStorage.setItem(keyStorage, JSON.stringify(addNewItem));
       } else {
         const addNewItem: IMetricsManage = {
-          cart: [data],
+          cart: [fullData],
           metrics: {
-            quantityItem: 1,
             quantityPerson: 1,
             totalByPerson: (data.price * data.quantity) / 1,
             valueTotal: data.price * data.quantity,
