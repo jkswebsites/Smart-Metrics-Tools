@@ -2,9 +2,7 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import React from 'react';
 import chamaNoRateio from '@/app/assets/images/chama-no rateio.png';
-import ScreenMetrics from './_components/screen-metrics';
-import FormAddItem from './_components/form-add-item';
-import ListItem from './_components/list-item';
+import FactorRateio from './_components/factor-rateio';
 export const metadata: Metadata = {
   title: 'Chama no Rateio Web',
   keywords:
@@ -37,16 +35,12 @@ const ChamaNoRateioPage = () => {
               </span>
             </h1>
           </div>
-
           <div>
             <h2>Em construção ainda não está funcionando!</h2>
-            <ScreenMetrics />
-            <FormAddItem />
+            <FactorRateio />
           </div>
         </div>
       </div>
-
-      <ListItem />
     </main>
   );
 };

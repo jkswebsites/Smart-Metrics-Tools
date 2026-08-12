@@ -1,5 +1,7 @@
+'use client';
+import { ChamaNoRateioContext } from '@/app/context/chamaNoRateioContext';
 import { formatBR } from '@/app/helpers/formatCurrency';
-import React from 'react';
+import React, { useContext } from 'react';
 interface IListItem {
   label: string;
   value: number;
@@ -20,12 +22,23 @@ const ItemList = ({ label, value, isDecimal }: IListItem) => {
   );
 };
 const ScreenMetrics = () => {
+  const { metrics } = useContext(ChamaNoRateioContext);
+  const { valueTotal, totalByPerson, quantityPerson } = metrics;
+
   return (
     <div className="mx-auto w-full sm:w-4/5">
       <ul className="mt-2 flex flex-col gap-1">
-        <ItemList label="Valor Total:" value={0} isDecimal={true} />
-        <ItemList label="Total para Cada:" value={0} isDecimal={true} />
-        <ItemList label="Participantes:" value={0} isDecimal={false} />
+        <ItemList label="Valor Total:" value={valueTotal} isDecimal={true} />
+        <ItemList
+          label="Total para Cada:"
+          value={totalByPerson}
+          isDecimal={true}
+        />
+        <ItemList
+          label="Participantes:"
+          value={quantityPerson}
+          isDecimal={false}
+        />
       </ul>
     </div>
   );

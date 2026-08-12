@@ -111,7 +111,7 @@ const Article = () => {
           e controlada. Leve para o caixa apenas o que cabe perfeitamente no seu
           bolso e no seu plano. Experimente hoje mesmo e veja como é fácil
           comprar sem estourar o orçamento. Sua saúde financeira agradece, e o
-          seu bolso sentirá a diferença de imediasta. Planeje, some, economize e
+          seu bolso sentirá a diferença de imediata. Planeje, some, economize e
           tenha o controle total dos seus gastos na mão. Afinal, economizar de
           verdade começa com a informação certa no momento certo.
         </p>
@@ -120,7 +120,7 @@ const Article = () => {
       <section>
         <h2 className="my-3 text-2xl">Controle seu orçamento</h2>
         <p className="text-xl leading-loose tracking-wide">
-          <strong className="text-emerald-400">Chega de Susto no Caixa</strong>
+          <strong className="text-emerald-400">Chega de Susto no Caixa </strong>
           mantenha seu orçamento sempre no controle, some os produtos em tempo
           real e não estoure o orçamento.
         </p>

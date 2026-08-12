@@ -1,6 +1,9 @@
 'use client';
-import { Button } from '@/components/ui/button';
-import React, { useState } from 'react';
+import {
+  ChamaNoRateioContext,
+  IInputs,
+} from '@/app/context/chamaNoRateioContext';
+import React, { useContext, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { tv } from 'tailwind-variants';
 
@@ -33,12 +36,8 @@ const buttonStyles = tv({
   },
 });
 
-interface IInputs {
-  nameItem: string;
-  price: number;
-  quantity: number;
-}
 const FormAddItem = () => {
+  const { addItem } = useContext(ChamaNoRateioContext);
   const [fieldFocused, setFieldFocused] = useState<string[]>([]);
   const {
     register,
@@ -67,7 +66,10 @@ const FormAddItem = () => {
     setFieldFocused([]);
   };
   const onSubmit: SubmitHandler<IInputs> = (data) => {
-    console.log(data);
+    addItem({
+      ...data,
+      price: Number(data.price),
+    });
     resetField('nameItem');
     resetField('price');
     resetField('quantity');
