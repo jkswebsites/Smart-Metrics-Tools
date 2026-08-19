@@ -44,6 +44,7 @@ const FormAddItem = () => {
     setFocus,
     resetField,
     handleSubmit,
+    setValue,
     formState: { errors, isSubmitting },
   } = useForm<IInputs>({
     defaultValues: {
@@ -64,6 +65,7 @@ const FormAddItem = () => {
   const handleReset = () => {
     setFocus('nameItem');
     setFieldFocused([]);
+    setValue('quantity', 1);
   };
   const onSubmit: SubmitHandler<IInputs> = (data) => {
     addItem({

@@ -3,6 +3,8 @@ import Image from 'next/image';
 import React from 'react';
 import chamaNoRateio from '@/app/assets/images/chama-no rateio.png';
 import FactorRateio from './_components/factor-rateio';
+import LogoImage from './_components/logo-image';
+import FooterOptions from './_components/footer-options';
 export const metadata: Metadata = {
   title: 'Chama no Rateio Web',
   keywords:
@@ -22,19 +24,12 @@ const ChamaNoRateioPage = () => {
           alt="Um boi felíz fazendo churrasco"
           width={0}
           height={0}
-          className="-mt-7"
+          className="-mt-8"
         />
       </div>
       <div className="relative z-10 mx-auto -mt-5 h-fit rounded-lg bg-neutral-900 p-3 sm:w-[450px]">
+        <LogoImage />
         <div className="mx-auto w-full sm:w-[400px]">
-          <div className="flex flex-col items-center justify-center">
-            <h1>
-              <span className="ml-8 block text-neutral-300">Chama no </span>
-              <span className="text-custom-secondary -mt-7 block text-5xl font-black">
-                R<span className="text-3xl">ateio</span>
-              </span>
-            </h1>
-          </div>
           <div>
             <h2>Em construção ainda não está funcionando!</h2>
             <div className="my-3">
@@ -43,6 +38,7 @@ const ChamaNoRateioPage = () => {
           </div>
         </div>
       </div>
+      <FooterOptions />
     </main>
   );
 };

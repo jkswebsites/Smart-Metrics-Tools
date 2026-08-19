@@ -6,10 +6,14 @@ import { v4 as uuidv4 } from 'uuid';
 interface IChildren {
   children: ReactNode;
 }
+
 export interface IInputs {
   nameItem: string;
   price: number;
   quantity: number;
+}
+interface ICart extends IInputs {
+  id: string;
 }
 interface IMetricsRateio {
   valueTotal: number;
@@ -17,16 +21,20 @@ interface IMetricsRateio {
   quantityPerson: number;
 }
 interface IRateioContext {
-  cart: IInputs[];
+  cart: ICart[];
   metrics: IMetricsRateio;
+  participants: IParticipants[];
   addItem: (data: IInputs) => void;
+  deleteItem: (id: string) => void;
 }
-interface ICart extends IInputs {
-  id: string;
+interface IParticipants {
+  nickname: string;
+  payment: boolean;
 }
 interface IMetricsManage {
   cart: ICart[];
   metrics: IMetricsRateio;
+  participants: IParticipants[];
 }
 const initialState: IMetricsManage = {
   cart: [],
@@ -35,10 +43,12 @@ const initialState: IMetricsManage = {
     totalByPerson: 0,
     quantityPerson: 1,
   },
+  participants: [],
 };
 export const ChamaNoRateioContext = createContext<IRateioContext>({
   ...initialState,
   addItem: () => {},
+  deleteItem: () => {},
 });
 
 export const ContextChamaNoRateio = ({ children }: IChildren) => {
@@ -46,6 +56,7 @@ export const ContextChamaNoRateio = ({ children }: IChildren) => {
   const [metrics, setMetrics] = useState<IMetricsManage>({
     cart: initialState.cart,
     metrics: initialState.metrics,
+    participants: initialState.participants,
   });
   const [callStorage, setCallStorage] = useState<boolean>(false);
 
@@ -64,13 +75,18 @@ export const ContextChamaNoRateio = ({ children }: IChildren) => {
           (acc, curr) => acc + curr.quantity * curr.price,
           0
         );
+        const amountPeople = parseStorage.participants
+          ? parseStorage.participants.length
+          : 1;
+        const totalPeople = amountPeople === 0 ? 1 : amountPeople;
         const addNewItem: IMetricsManage = {
           cart: itemsCart,
           metrics: {
             valueTotal: accValueTotal,
-            totalByPerson: accValueTotal / itemsCart.length,
-            quantityPerson: 1,
+            totalByPerson: accValueTotal / totalPeople,
+            quantityPerson: totalPeople,
           },
+          participants: parseStorage.participants,
         };
         localStorage.setItem(keyStorage, JSON.stringify(addNewItem));
       } else {
@@ -81,10 +97,42 @@ export const ContextChamaNoRateio = ({ children }: IChildren) => {
             totalByPerson: (data.price * data.quantity) / 1,
             valueTotal: data.price * data.quantity,
           },
+          participants: initialState.participants,
         };
         localStorage.setItem(keyStorage, JSON.stringify(addNewItem));
       }
       setCallStorage(true);
+    }
+  };
+  const deleteItem = (id: string) => {
+    if (typeof window !== 'undefined') {
+      const rateioStorage = localStorage.getItem(keyStorage);
+      if (rateioStorage) {
+        const parseRateioStorage: IMetricsManage = JSON.parse(rateioStorage);
+        const deleteItemCart = parseRateioStorage.cart.filter(
+          (item) => item.id !== id
+        );
+        const newTotal = deleteItemCart.reduce((acc, curr) => {
+          const total = curr.price * curr.quantity;
+          return acc + total;
+        }, 0);
+        const getPeoples = parseRateioStorage.participants
+          ? parseRateioStorage.participants.length
+          : 1;
+        const totalPeople = getPeoples === 0 ? 1 : getPeoples;
+
+        const newDatas: IMetricsManage = {
+          cart: deleteItemCart,
+          metrics: {
+            quantityPerson: totalPeople,
+            valueTotal: newTotal,
+            totalByPerson: newTotal / totalPeople,
+          },
+          participants: parseRateioStorage.participants,
+        };
+        localStorage.setItem(keyStorage, JSON.stringify(newDatas));
+        setCallStorage(true);
+      }
     }
   };
 
@@ -102,7 +150,7 @@ export const ContextChamaNoRateio = ({ children }: IChildren) => {
   }, [callStorage]);
 
   return (
-    <ChamaNoRateioContext.Provider value={{ ...metrics, addItem }}>
+    <ChamaNoRateioContext.Provider value={{ ...metrics, addItem, deleteItem }}>
       {children}
     </ChamaNoRateioContext.Provider>
   );
