@@ -3,6 +3,8 @@ import React from 'react';
 import { createContext, ReactNode, useEffect, useState } from 'react';
 import { checkIfWindowIsUndefined } from '../helpers/storage-manager/checkWindow';
 import { v4 as uuidv4 } from 'uuid';
+import { IInputParticipant } from '../pages/chama-no-rateio/_components/sheet-person-form';
+import { json } from 'stream/consumers';
 interface IChildren {
   children: ReactNode;
 }
@@ -26,8 +28,10 @@ interface IRateioContext {
   participants: IParticipants[];
   addItem: (data: IInputs) => void;
   deleteItem: (id: string) => void;
+  addParticipant: (data: IInputParticipant) => void;
 }
 interface IParticipants {
+  id: string;
   nickname: string;
   payment: boolean;
 }
@@ -49,9 +53,10 @@ export const ChamaNoRateioContext = createContext<IRateioContext>({
   ...initialState,
   addItem: () => {},
   deleteItem: () => {},
+  addParticipant: () => {},
 });
 
-export const ContextChamaNoRateio = ({ children }: IChildren) => {
+export const ContextChamaNoRateioProvider = ({ children }: IChildren) => {
   const keyStorage = 'rateio-datas';
   const [metrics, setMetrics] = useState<IMetricsManage>({
     cart: initialState.cart,
@@ -135,6 +140,49 @@ export const ContextChamaNoRateio = ({ children }: IChildren) => {
       }
     }
   };
+  const addParticipant = (data: IInputParticipant) => {
+    const inputParticipant: IParticipants = {
+      id: uuidv4(),
+      nickname: data.nickname,
+      payment: false,
+    };
+
+    if (checkIfWindowIsUndefined()) {
+      const datasStorage = localStorage.getItem(keyStorage);
+
+      if (datasStorage) {
+        const storageMetrics: IMetricsManage = JSON.parse(datasStorage);
+        const addNewParticipant = [
+          ...storageMetrics.participants,
+          inputParticipant,
+        ];
+        const totalParticipants =
+          addNewParticipant.length === 0 ? 1 : addNewParticipant.length;
+        const totalCart = storageMetrics.cart.reduce(
+          (acc, curr) => acc + curr.price * curr.quantity,
+          0
+        );
+
+        const updateMetrics: IMetricsManage = {
+          ...storageMetrics,
+          metrics: {
+            quantityPerson: totalParticipants,
+            totalByPerson: totalCart / totalParticipants,
+            valueTotal: totalCart,
+          },
+          participants: addNewParticipant,
+        };
+        localStorage.setItem(keyStorage, JSON.stringify(updateMetrics));
+      } else {
+        const addParticipant: IMetricsManage = {
+          ...initialState,
+          participants: [inputParticipant],
+        };
+        localStorage.setItem(keyStorage, JSON.stringify(addParticipant));
+      }
+      setCallStorage(true);
+    }
+  };
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -150,7 +198,9 @@ export const ContextChamaNoRateio = ({ children }: IChildren) => {
   }, [callStorage]);
 
   return (
-    <ChamaNoRateioContext.Provider value={{ ...metrics, addItem, deleteItem }}>
+    <ChamaNoRateioContext.Provider
+      value={{ ...metrics, addItem, deleteItem, addParticipant }}
+    >
       {children}
     </ChamaNoRateioContext.Provider>
   );

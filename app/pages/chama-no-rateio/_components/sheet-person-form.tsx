@@ -1,5 +1,6 @@
 'use client';
-import React, { useState } from 'react';
+import { ChamaNoRateioContext } from '@/app/context/chamaNoRateioContext';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FaRegUserCircle } from 'react-icons/fa';
 import { LiaUserPlusSolid } from 'react-icons/lia';
@@ -23,9 +24,11 @@ export interface IInputParticipant {
   nickname: string;
 }
 const SheetPersonForm = () => {
+  const { addParticipant } = useContext(ChamaNoRateioContext);
   const {
     register,
     handleSubmit,
+    resetField,
     formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm<IInputParticipant>();
   const [fieldFocus, setFieldFocus] = useState<boolean>(false);
@@ -40,8 +43,10 @@ const SheetPersonForm = () => {
     }
   };
   const handleSubmitForm = (data: IInputParticipant) => {
-    console.log(data);
+    addParticipant(data);
+    resetField('nickname');
   };
+
   return (
     <form onSubmit={handleSubmit(handleSubmitForm)}>
       <label htmlFor="nickname" className="top relative">
@@ -87,7 +92,7 @@ const SheetPersonForm = () => {
           )}
         </button>
         {isSubmitSuccessful && (
-          <p className="font-oxygen mt-1 text-center text-xs italic text-emerald-500">
+          <p className="font-oxygen mt-2 text-center text-xs text-emerald-400">
             Participante adicionado à lista!
           </p>
         )}

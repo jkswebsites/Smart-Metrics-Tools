@@ -6,7 +6,6 @@ import NavFooter from './_components/nav-footer';
 import { ImageCard, ImageContent, TitleContent } from '@/components/image-card';
 import Article from './_components/article';
 import AlertWarning from '@/app/_components/alert-action';
-import PWAButton from '@/app/_components/pwa-button';
 
 export const metadata: Metadata = {
   title: 'Bora Poupar App',

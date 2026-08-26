@@ -5,12 +5,14 @@ import chamaNoRateio from '@/app/assets/images/chama-no rateio.png';
 import FactorRateio from './_components/factor-rateio';
 import LogoImage from './_components/logo-image';
 import FooterOptions from './_components/footer-options';
+import { ContextChamaNoRateioProvider } from '@/app/context/chamaNoRateioContext';
+
 export const metadata: Metadata = {
   title: 'Chama no Rateio Web',
   keywords:
     'Chama no Rateio Web, rateio, divir conta, econômia, controle de gastos',
   description:
-    'Chama no Rateio é uma aplicação web para ajudar pessoas a gerenciar gastos no momento de dividar as contas',
+    'Chama no Rateio é uma aplicação web para ajudar pessoas a gerenciar gastos no momento de dividar as conta',
   authors: {
     name: 'J. Tiago Silva',
   },
@@ -27,18 +29,20 @@ const ChamaNoRateioPage = () => {
           className="-mt-8"
         />
       </div>
-      <div className="relative z-10 mx-auto -mt-5 h-fit rounded-lg bg-neutral-900 p-3 sm:w-[450px]">
-        <LogoImage />
-        <div className="mx-auto w-full sm:w-[400px]">
-          <div>
-            <h2>Em construção ainda não está funcionando!</h2>
-            <div className="my-3">
-              <FactorRateio />
+      <ContextChamaNoRateioProvider>
+        <div className="relative z-10 mx-auto -mt-5 h-fit rounded-lg bg-neutral-900 p-3 sm:w-[450px]">
+          <LogoImage />
+          <div className="mx-auto w-full sm:w-[400px]">
+            <div>
+              <h2>Em construção ainda não está funcionando!</h2>
+              <div className="my-3">
+                <FactorRateio />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <FooterOptions />
+        <FooterOptions />
+      </ContextChamaNoRateioProvider>
     </main>
   );
 };

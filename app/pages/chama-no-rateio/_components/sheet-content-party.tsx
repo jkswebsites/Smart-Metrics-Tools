@@ -1,4 +1,9 @@
-import { SheetContent, SheetHeader, SheetTitle } from '@/components/ui/sheet';
+import {
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+} from '@/components/ui/sheet';
 import Image from 'next/image';
 import React from 'react';
 import imgChurras from '@/app/assets/images/chama-no rateio.png';
@@ -18,6 +23,9 @@ const SheetContentParty = () => {
           <SheetTitle className="text-center text-neutral-100">
             Participantes do Rateio
           </SheetTitle>
+          <SheetDescription className="text-center">
+            Organize os participantes do Rateio!
+          </SheetDescription>
         </SheetHeader>
         <FactorPeople />
       </div>
