@@ -6,7 +6,7 @@ import { FaUserCheck } from 'react-icons/fa6';
 import { ChamaNoRateioContext } from '@/app/context/chamaNoRateioContext';
 
 const ListPeople = () => {
-  const { participants } = useContext(ChamaNoRateioContext);
+  const { participants, removePartcipant } = useContext(ChamaNoRateioContext);
 
   return (
     <div className="mx-auto mb-3 h-[250px] w-[98%] overflow-auto rounded-lg border border-neutral-800 bg-neutral-900 p-1">
@@ -22,7 +22,11 @@ const ListPeople = () => {
                   {participant.nickname}
                 </p>
                 <div className="flex gap-1 [&>button]:rounded-md [&>button]:p-1">
-                  <button className="bg-red-600" title="Remover do Rateio">
+                  <button
+                    onClick={() => removePartcipant(participant.id)}
+                    className="bg-red-600"
+                    title="Remover do Rateio"
+                  >
                     <AiOutlineUserDelete />
                   </button>
                   <button className="bg-emerald-500" title="Pagou!">

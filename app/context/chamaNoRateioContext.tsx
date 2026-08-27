@@ -29,6 +29,7 @@ interface IRateioContext {
   addItem: (data: IInputs) => void;
   deleteItem: (id: string) => void;
   addParticipant: (data: IInputParticipant) => void;
+  removePartcipant: (id: string) => void;
 }
 interface IParticipants {
   id: string;
@@ -54,6 +55,7 @@ export const ChamaNoRateioContext = createContext<IRateioContext>({
   addItem: () => {},
   deleteItem: () => {},
   addParticipant: () => {},
+  removePartcipant: () => {},
 });
 
 export const ContextChamaNoRateioProvider = ({ children }: IChildren) => {
@@ -183,6 +185,34 @@ export const ContextChamaNoRateioProvider = ({ children }: IChildren) => {
       setCallStorage(true);
     }
   };
+  const removePartcipant = (id: string) => {
+    if (checkIfWindowIsUndefined()) {
+      const datasStorage = localStorage.getItem(keyStorage);
+      if (datasStorage) {
+        const { participants, cart }: IMetricsManage = JSON.parse(datasStorage);
+        const participantRemoved: IParticipants[] = participants.filter(
+          (participant) => participant.id !== id
+        );
+        const totalParticipants =
+          participantRemoved.length === 0 ? 1 : participantRemoved.length;
+        const totalCart = cart.reduce(
+          (acc, curr) => curr.price * curr.quantity + acc,
+          0
+        );
+        const updateMetrics: IMetricsManage = {
+          cart,
+          metrics: {
+            quantityPerson: totalParticipants,
+            totalByPerson: totalCart / totalParticipants,
+            valueTotal: totalCart,
+          },
+          participants: participantRemoved,
+        };
+        localStorage.setItem(keyStorage, JSON.stringify(updateMetrics));
+        setCallStorage(true);
+      }
+    }
+  };
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -199,7 +229,13 @@ export const ContextChamaNoRateioProvider = ({ children }: IChildren) => {
 
   return (
     <ChamaNoRateioContext.Provider
-      value={{ ...metrics, addItem, deleteItem, addParticipant }}
+      value={{
+        ...metrics,
+        addItem,
+        deleteItem,
+        addParticipant,
+        removePartcipant,
+      }}
     >
       {children}
     </ChamaNoRateioContext.Provider>
