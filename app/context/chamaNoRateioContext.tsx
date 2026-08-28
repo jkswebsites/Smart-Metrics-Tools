@@ -4,7 +4,7 @@ import { createContext, ReactNode, useEffect, useState } from 'react';
 import { checkIfWindowIsUndefined } from '../helpers/storage-manager/checkWindow';
 import { v4 as uuidv4 } from 'uuid';
 import { IInputParticipant } from '../pages/chama-no-rateio/_components/sheet-person-form';
-import { json } from 'stream/consumers';
+
 interface IChildren {
   children: ReactNode;
 }
@@ -30,6 +30,7 @@ interface IRateioContext {
   deleteItem: (id: string) => void;
   addParticipant: (data: IInputParticipant) => void;
   removePartcipant: (id: string) => void;
+  managerPayment: (id: string) => void;
 }
 interface IParticipants {
   id: string;
@@ -56,6 +57,7 @@ export const ChamaNoRateioContext = createContext<IRateioContext>({
   deleteItem: () => {},
   addParticipant: () => {},
   removePartcipant: () => {},
+  managerPayment: () => {},
 });
 
 export const ContextChamaNoRateioProvider = ({ children }: IChildren) => {
@@ -213,6 +215,31 @@ export const ContextChamaNoRateioProvider = ({ children }: IChildren) => {
       }
     }
   };
+  const managerPayment = (id: string) => {
+    if (checkIfWindowIsUndefined()) {
+      const datasStorage = localStorage.getItem(keyStorage);
+      if (datasStorage) {
+        const metricsStorage: IMetricsManage = JSON.parse(datasStorage);
+        const updateMetrics: IParticipants[] = metricsStorage.participants.map(
+          (participant) => {
+            if (participant.id === id) {
+              return {
+                ...participant,
+                payment: !participant.payment,
+              };
+            }
+            return participant;
+          }
+        );
+        const managerMetrics: IMetricsManage = {
+          ...metricsStorage,
+          participants: updateMetrics,
+        };
+        localStorage.setItem(keyStorage, JSON.stringify(managerMetrics));
+        setCallStorage(true);
+      }
+    }
+  };
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -235,6 +262,7 @@ export const ContextChamaNoRateioProvider = ({ children }: IChildren) => {
         deleteItem,
         addParticipant,
         removePartcipant,
+        managerPayment,
       }}
     >
       {children}

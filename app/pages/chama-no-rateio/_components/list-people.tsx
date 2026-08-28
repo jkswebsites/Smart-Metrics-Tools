@@ -6,19 +6,22 @@ import { FaUserCheck } from 'react-icons/fa6';
 import { ChamaNoRateioContext } from '@/app/context/chamaNoRateioContext';
 
 const ListPeople = () => {
-  const { participants, removePartcipant } = useContext(ChamaNoRateioContext);
+  const { participants, removePartcipant, managerPayment } =
+    useContext(ChamaNoRateioContext);
 
   return (
-    <div className="mx-auto mb-3 h-[250px] w-[98%] overflow-auto rounded-lg border border-neutral-800 bg-neutral-900 p-1">
+    <div className="mx-auto mb-5 h-[350px] w-[98%] overflow-auto rounded-lg border border-neutral-800 bg-neutral-900 p-1">
       {participants && participants.length > 0 && (
-        <ul className="space-y-1">
+        <ul className="space-y-2">
           {participants.map((participant) => (
             <li
               key={participant.id}
-              className="h-12 w-full rounded-md border border-neutral-700 bg-neutral-900 px-2 pb-1 pt-1"
+              className={`${participant.payment ? 'bg-emerald-600' : 'bg-neutral-900'} h-12 w-full rounded-md border border-neutral-700 px-2 pb-1 pt-1`}
             >
               <div className="flex justify-between">
-                <p className="font-montserrat font-bold tracking-wide text-emerald-500">
+                <p
+                  className={`${participant.payment ? 'text-neutral-700' : 'text-emerald-500'} font-montserrat font-bold tracking-wide`}
+                >
                   {participant.nickname}
                 </p>
                 <div className="flex gap-1 [&>button]:rounded-md [&>button]:p-1">
@@ -29,7 +32,13 @@ const ListPeople = () => {
                   >
                     <AiOutlineUserDelete />
                   </button>
-                  <button className="bg-emerald-500" title="Pagou!">
+                  <button
+                    onClick={() => managerPayment(participant.id)}
+                    className={
+                      participant.payment ? 'bg-neutral-700' : 'bg-emerald-400'
+                    }
+                    title="Pagou!"
+                  >
                     <FaUserCheck />
                   </button>
                 </div>

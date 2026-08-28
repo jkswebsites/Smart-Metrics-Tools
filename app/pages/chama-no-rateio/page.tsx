@@ -34,7 +34,6 @@ const ChamaNoRateioPage = () => {
           <LogoImage />
           <div className="mx-auto w-full sm:w-[400px]">
             <div>
-              <h2>Em construção ainda não está funcionando!</h2>
               <div className="my-3">
                 <FactorRateio />
               </div>
