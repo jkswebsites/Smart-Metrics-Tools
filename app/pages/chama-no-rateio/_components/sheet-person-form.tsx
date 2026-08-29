@@ -48,7 +48,7 @@ const SheetPersonForm = () => {
   };
 
   return (
-    <form className="" onSubmit={handleSubmit(handleSubmitForm)}>
+    <form className="px-1" onSubmit={handleSubmit(handleSubmitForm)}>
       <label htmlFor="nickname" className="top relative">
         <span
           className={labelStyles({

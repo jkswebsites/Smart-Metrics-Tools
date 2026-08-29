@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 const ChamaNoRateioPage = () => {
   return (
     <main className="min-h-screen w-full">
-      <div className="z-0 mx-auto h-[80px] w-full overflow-hidden">
+      <div className="z-0 mx-auto h-20 w-full overflow-hidden lg:h-[300px]">
         <Image
           src={chamaNoRateio}
           alt="Churrasco do Boi"
@@ -31,7 +31,7 @@ const ChamaNoRateioPage = () => {
         />
       </div>
       <ContextChamaNoRateioProvider>
-        <div className="relative z-10 mx-auto -mt-5 h-fit rounded-lg bg-neutral-900 p-3 sm:w-[450px]">
+        <div className="relative z-10 mx-auto -mt-5 h-fit rounded-lg bg-neutral-900 p-3 sm:w-[450px] lg:-mt-[100px]">
           <LogoImage />
           <div className="mx-auto w-full sm:w-[400px]">
             <div>

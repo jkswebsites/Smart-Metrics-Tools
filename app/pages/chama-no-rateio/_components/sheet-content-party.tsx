@@ -24,9 +24,7 @@ const SheetContentParty = () => {
           <SheetTitle className="text-center text-neutral-100">
             Participantes do Rateio
           </SheetTitle>
-          <SheetDescription className="text-center">
-            Organize os participantes do Rateio!
-          </SheetDescription>
+          <SheetDescription className="text-green-400"></SheetDescription>
         </SheetHeader>
         <FactorPeople />
       </div>

@@ -10,7 +10,7 @@ const ListPeople = () => {
     useContext(ChamaNoRateioContext);
 
   return (
-    <div className="mx-auto mb-5 h-[350px] w-[98%] overflow-auto rounded-lg border border-neutral-800 bg-neutral-900 p-1">
+    <div className="mx-auto mb-5 h-[220px] w-[98%] overflow-auto rounded-lg border border-neutral-800 bg-neutral-900 p-1">
       {participants && participants.length > 0 && (
         <ul className="space-y-2">
           {participants.map((participant) => (
