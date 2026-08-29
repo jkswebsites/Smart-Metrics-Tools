@@ -16,6 +16,7 @@ const SheetContentParty = () => {
         src={imgChurras}
         alt="Churrasco do Boi"
         className="z-10 block w-full"
+        priority
       />
       <div className="relative z-20 mx-auto -mt-14 h-full w-full rounded-lg bg-neutral-950 p-3 drop-shadow-lg">
         {' '}

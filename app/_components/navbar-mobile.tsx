@@ -22,10 +22,8 @@ const NavbarMobile = () => {
             </p>
           </div>
         </SheetTitle>
-        <SheetDescription>
-          <p className="-mt-2 text-center italic text-white">
-            Facilitando sua vida com aplicativos.
-          </p>
+        <SheetDescription className="-mt-2 text-center italic text-white">
+          Facilitando sua vida com aplicativos.
         </SheetDescription>
       </SheetHeader>
       <ContainerLinks />

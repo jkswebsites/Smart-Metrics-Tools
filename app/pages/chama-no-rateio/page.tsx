@@ -23,10 +23,11 @@ const ChamaNoRateioPage = () => {
       <div className="z-0 mx-auto h-[80px] w-full overflow-hidden">
         <Image
           src={chamaNoRateio}
-          alt="Um boi felíz fazendo churrasco"
+          alt="Churrasco do Boi"
           width={0}
           height={0}
           className="-mt-8"
+          priority
         />
       </div>
       <ContextChamaNoRateioProvider>

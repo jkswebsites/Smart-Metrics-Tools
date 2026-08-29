@@ -156,27 +156,35 @@ export const ContextChamaNoRateioProvider = ({ children }: IChildren) => {
 
       if (datasStorage) {
         const storageMetrics: IMetricsManage = JSON.parse(datasStorage);
-        const addNewParticipant = [
-          ...storageMetrics.participants,
-          inputParticipant,
-        ];
-        const totalParticipants =
-          addNewParticipant.length === 0 ? 1 : addNewParticipant.length;
-        const totalCart = storageMetrics.cart.reduce(
-          (acc, curr) => acc + curr.price * curr.quantity,
-          0
-        );
+        if (storageMetrics.participants) {
+          const addNewParticipant = [
+            ...storageMetrics.participants,
+            inputParticipant,
+          ];
+          const totalParticipants =
+            addNewParticipant.length === 0 ? 1 : addNewParticipant.length;
+          const totalCart = storageMetrics.cart.reduce(
+            (acc, curr) => acc + curr.price * curr.quantity,
+            0
+          );
 
-        const updateMetrics: IMetricsManage = {
-          ...storageMetrics,
-          metrics: {
-            quantityPerson: totalParticipants,
-            totalByPerson: totalCart / totalParticipants,
-            valueTotal: totalCart,
-          },
-          participants: addNewParticipant,
-        };
-        localStorage.setItem(keyStorage, JSON.stringify(updateMetrics));
+          const updateMetrics: IMetricsManage = {
+            ...storageMetrics,
+            metrics: {
+              quantityPerson: totalParticipants,
+              totalByPerson: totalCart / totalParticipants,
+              valueTotal: totalCart,
+            },
+            participants: addNewParticipant,
+          };
+          localStorage.setItem(keyStorage, JSON.stringify(updateMetrics));
+        } else {
+          const updateMetrics: IMetricsManage = {
+            ...storageMetrics,
+            participants: [inputParticipant],
+          };
+          localStorage.setItem(keyStorage, JSON.stringify(updateMetrics));
+        }
       } else {
         const addParticipant: IMetricsManage = {
           ...initialState,

@@ -7,9 +7,7 @@ import withPWAInit from 'next-pwa';
 
 const withPWA = withPWAInit({
   dest: 'public',
-  disable: false,
+  disable: true,
 });
 
-export default withPWA({
-  nextConfig,
-});
+export default withPWA(nextConfig);
