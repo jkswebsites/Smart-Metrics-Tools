@@ -26,7 +26,7 @@ const ChamaNoRateioPage = () => {
           alt="Churrasco do Boi"
           width={0}
           height={0}
-          className="-mt-8"
+          className="-mt-8 w-full"
           priority
         />
       </div>
