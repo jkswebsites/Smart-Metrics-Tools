@@ -22,6 +22,9 @@ export const metadata: Metadata = {
     shortcut: ['./icon.png'],
   },
   manifest: '/manifest.json',
+  verification: {
+    google: 'se-wFQkoaYKc_DKCza2yGPtkqukVVsQL4KzS8U055n0',
+  },
 };
 export const viewport: Viewport = {
   themeColor: '#ffffff',
