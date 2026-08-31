@@ -5,11 +5,11 @@ import SheetContentParty from './sheet-content-party';
 
 const FooterOptions = () => {
   return (
-    <footer className="fixed bottom-10 right-3 z-20 h-6 p-2">
+    <footer className="fixed bottom-0 z-20 flex w-full items-center justify-center p-3 sm:justify-end">
       <Sheet>
-        <SheetTrigger className="flex flex-col items-center justify-center rounded-lg bg-emerald-400 p-1 text-neutral-900">
+        <SheetTrigger className="flex w-[90%] items-center justify-center rounded-sm border bg-emerald-500 py-2 text-neutral-800 shadow-sm shadow-neutral-600 sm:flex-col">
           <FaUserSecret size={18} />
-          <span className="text-[7px] font-bold">+ Pessoas</span>
+          <span className="text-sm font-bold"> + Pessoas</span>
         </SheetTrigger>
         <SheetContentParty />
       </Sheet>
