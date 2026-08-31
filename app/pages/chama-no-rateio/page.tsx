@@ -6,6 +6,7 @@ import FactorRateio from './_components/factor-rateio';
 import LogoImage from './_components/logo-image';
 import FooterOptions from './_components/footer-options';
 import { ContextChamaNoRateioProvider } from '@/app/context/chamaNoRateioContext';
+import ContentSite from './_components/content-site';
 
 export const metadata: Metadata = {
   title: 'Chama no Rateio Web',
@@ -43,6 +44,7 @@ const ChamaNoRateioPage = () => {
         </div>
         <FooterOptions />
       </ContextChamaNoRateioProvider>
+      <ContentSite />
     </main>
   );
 };
