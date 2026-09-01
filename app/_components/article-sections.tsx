@@ -13,7 +13,7 @@ const Paragraph = ({ children }: ReactChildren) => {
 };
 const ArticleSections = ({ children }: ReactChildren) => {
   return (
-    <section className="my-4 rounded-md bg-neutral-800">
+    <section className="my-4 rounded-md">
       <article>{children}</article>
     </section>
   );

@@ -9,9 +9,9 @@ import chamaNoRateio from '@/app/assets/images/chama-no-rateio/chama-no-rateio-p
 
 const ContentSite = () => {
   return (
-    <div className="mx-auto px-1 py-2 sm:w-[600px]">
+    <div className="mx-auto px-3 py-2 sm:w-[600px]">
       <ArticleSections>
-        <div className="h-64 w-full overflow-hidden rounded-lg shadow-lg shadow-neutral-700">
+        <div className="h-64 w-full overflow-hidden rounded-lg shadow-lg shadow-neutral-700 lg:h-72">
           <Image
             src={chamaNoRateio}
             alt="Chama no Rateio"
@@ -40,10 +40,76 @@ const ContentSite = () => {
           despesas e participantes.
         </Paragraph>
       </ArticleSections>
+
       <ArticleSections>
-        <SubtitleH3>
-          Não fique no prejuízo: organize suas despesas com o Chama no Rateio
-        </SubtitleH3>
+        <SubtitleH3>Quais problemas ele resolve?</SubtitleH3>
+        <Paragraph>
+          Há muitos desafios ao realizar eventos com despesas compartilhadas. um
+          simples churrasco com os amigos ou familiares pode se tornar uma dor
+          de cabeça na hora de organizar os participantes do evento e o valor
+          total da despesa.
+        </Paragraph>
+
+        <Paragraph>
+          Gerenciar despesas e grupo de pessoas numerosas em eventos de forma
+          manual ou na calculadora tradicional pode aumentar à probabilidade de
+          erros, gerando transtorno para organizadores e convidados do evento,
+          podendo gerar conflitos e prejuízos entre os organizadores e
+          participantes.
+        </Paragraph>
+
+        <Paragraph>
+          Com o Chama no Rateio, você pode acompanhar as despesas e os
+          participantes de onde estiver, mantendo as informações organizadas
+          antes e durante todo o evento.
+        </Paragraph>
+        <Paragraph>
+          Com o aplicativo <strong>Chama no Rateio</strong> você monitora em
+          tempo real o valor total das despesas e o valor que cada participante
+          da vaquinha pagará, assim mantendo você e os participantes do evento
+          informados e cientes de quanto pagará pela sua participação no
+          churrascos.
+        </Paragraph>
+
+        <Paragraph>
+          Essa aplicação web permite criar e gerenciar uma lista de produtos,
+          assim mantendo os participantes informando de cada produtos adquirido,
+          evitando contestação dos participantes do churrasco
+        </Paragraph>
+      </ArticleSections>
+
+      <ArticleSections>
+        <SubtitleH3>Princípais funcionalidades:</SubtitleH3>
+        <ul className="list-disc space-y-3 pl-5">
+          <li>Visualizar despesas;</li>
+          <li>Registrar, listar e gerenciar produtos;</li>
+          <li>Criar grupos;</li>
+          <li>Adicionar participantes;</li>
+          <li>Acompanhamento de pagamentos;</li>
+          <li>Calcular o valor por participante;</li>
+          <li>Atualizar valores em tempo real;</li>
+        </ul>
+      </ArticleSections>
+      <ArticleSections>
+        <SubtitleH3>Para quem é o Chama no Rateio?</SubtitleH3>
+        <Paragraph>
+          Esse aplicativo web é perfeito para organizar participantes e despesas
+          compatilhadas em:
+        </Paragraph>
+        <ul className="list-disc space-y-3 pl-5">
+          <li>Churrascos entre amigos e familiares;</li>
+          <li>Confraternizações;</li>
+          <li>Viagens;</li>
+          <li>Happy Hour;</li>
+          <li>Em pizzarias;</li>
+          <li>Restaurantes;</li>
+          <li>Eventos familiares;</li>
+          <li>Natal e Ano Novo;</li>
+          <li>Vaquinhas para compras coletivas,</li>
+        </ul>
+      </ArticleSections>
+
+      <ArticleSections>
         <Paragraph>
           Organizar um evento em grupo pode ser muito divertido, mas dividir as
           despesas nem sempre é uma tarefa fácil. Com várias pessoas
@@ -90,12 +156,13 @@ const ContentSite = () => {
         </Paragraph>
       </ArticleSections>
       <ArticleSections>
-        <SubtitleH3>Como funciona</SubtitleH3>
+        <SubtitleH3>Como funciona?</SubtitleH3>
         <Paragraph>
-          O usuário pode criar um grupo para um evento, adicionar os
-          participantes e registrar as despesas relacionadas à ocasião. Dessa
-          forma, as informações ficam organizadas em um único lugar e podem ser
-          consultadas pelos integrantes do grupo.
+          Essa aplicação permite adicionar produtos e seus respectivos valores à
+          lista, que pode ser consultada posteriormente pelos membros
+          Participantes do churrasco: caso haja contestação sobre algum item,
+          ele pode ser removido da lista, atualizando o valor total e o total de
+          cada participante em tempo real.
         </Paragraph>
 
         <Paragraph>
@@ -123,8 +190,8 @@ const ContentSite = () => {
       <ArticleSections>
         <SubtitleH3>Adicionando Participantes</SubtitleH3>
         <Paragraph>
-          Gerencie participantes, adicione por nome ou apilidos, monitore a
-          quantidade de pessoas participando da vaquinha, ê também é possível
+          Gerencie participantes, adicione por nome ou apelidos, monitore a
+          quantidade de pessoas participando da vaquinha, e também é possível
           gerenciar os participantes que já pagaram e os que não pagaram o valor
           total da vaquinha dividido pela quantidade de participantes
         </Paragraph>
@@ -133,10 +200,10 @@ const ContentSite = () => {
       <ArticleSections>
         <SubtitleH3>Adicionando Produtos</SubtitleH3>
         <Paragraph>
-          Gerencie produtos, adicione itens á lista ou removo, à aplicação{' '}
-          <strong className="text-emerald-700">Chama no Rateio</strong> calcula
-          em tempo real, somam os item e divide pela quantidades de
-          participantes e mostra o valor total para cada participantes.
+          Gerencie produtos, adicione itens à lista ou remover, à aplicação{' '}
+          <strong className="text-emerald-500">Chama no Rateio</strong> calcula
+          em tempo real, somam os item e divide pela quantidade de participantes
+          e mostra o valor total para cada participante.
         </Paragraph>
       </ArticleSections>
     </div>

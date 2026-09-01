@@ -6,7 +6,7 @@ import { ImInstagram } from 'react-icons/im';
 
 const Footer = () => {
   return (
-    <footer className="relative bottom-0 z-0 flex flex-col items-center justify-start border-t border-t-neutral-800 bg-neutral-950 py-4">
+    <footer className="relative bottom-0 z-20 flex flex-col items-center justify-start border-t border-t-neutral-800 bg-neutral-950 py-4">
       <p className="italic">Dicas & Sugestões</p>
       <div className="flex gap-2">
         <Link
