@@ -37,7 +37,7 @@ export default function HomeOficinaWeb54() {
             Facilitando sua vida com aplicativos;
           </p>
           <GridLinks />
-          <div className="my-4">
+          <div className="my-4 lg:w-[700px]">
             <ContentPage />
           </div>
         </div>
