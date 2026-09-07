@@ -5,7 +5,9 @@ interface ReactChildren {
 
 const SubtitleH3 = ({ children }: ReactChildren) => {
   return (
-    <h3 className="text-custom-secondary mb-3 pl-4 text-2xl">{children}</h3>
+    <h3 className="text-custom-secondary font-oxygen mb-3 pl-4 text-2xl font-bold">
+      {children}
+    </h3>
   );
 };
 const Paragraph = ({ children }: ReactChildren) => {

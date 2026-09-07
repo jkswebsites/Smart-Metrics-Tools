@@ -20,7 +20,7 @@ const TermsOfUse = () => {
           </p>
 
           <Paragraph>
-            Bem-vindo ao <strong>Saturno web app.</strong>
+            Bem-vindo ao <strong>Oficina Web 54.</strong>
           </Paragraph>
 
           <Paragraph>

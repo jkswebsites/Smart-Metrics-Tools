@@ -3,7 +3,7 @@ import { ContextSmartBuyProvider } from '@/app/context/smart-buy-context';
 import { Metadata } from 'next';
 import { ImageCard, ImageContent, TitleContent } from '@/components/image-card';
 import MainManager from './_components/main-manager';
-import { Article, Paragraph } from '../_components/article';
+import { Article, Paragraph } from '../../_components/article';
 
 export const metadata: Metadata = {
   title: 'IFood Fácil',
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     'IFood fácil é um aplicativo que lhe ajuda à calcular o preço de venda no IFood',
 };
 
-export default function Home() {
+export default function IFoodFacilPage() {
   return (
     <div className="w-full">
       <main className="mx-auto mt-20 min-h-[800px] w-[95%]">

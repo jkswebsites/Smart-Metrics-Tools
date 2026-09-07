@@ -5,6 +5,7 @@ import { Oxygen, Montserrat } from 'next/font/google';
 import Header from './_components/header';
 import Script from 'next/script';
 import Footer from './_components/footer';
+import { Toaster } from '@/components/ui/sonner';
 
 export const metadata: Metadata = {
   title: {
@@ -64,10 +65,13 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className={`${oxigen.variable} ${montserrat.variable} antialiased`}>
+      <body
+        className={`${oxigen.variable} ${montserrat.variable} min-h-screen antialiased`}
+      >
         <Header />
         <div>{children}</div>
         <Footer />
+        <Toaster />
       </body>
     </html>
   );

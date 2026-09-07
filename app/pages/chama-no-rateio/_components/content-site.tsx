@@ -11,7 +11,8 @@ const ContentSite = () => {
   return (
     <div className="mx-auto px-3 py-2 sm:w-[600px]">
       <ArticleSections>
-        <div className="h-64 w-full overflow-hidden rounded-lg shadow-lg shadow-neutral-700 lg:h-72">
+        <div className="relative h-64 w-full overflow-hidden rounded-lg lg:h-72">
+          <div className="absolute h-full w-full bg-gradient-to-t from-neutral-950 via-transparent to-neutral-950"></div>
           <Image
             src={chamaNoRateio}
             alt="Chama no Rateio"
@@ -20,19 +21,22 @@ const ContentSite = () => {
             className="h-full"
           />
         </div>
-        <SubtitleH3>Sobre o Chama no Rateio</SubtitleH3>
-        <Paragraph>
-          O <strong className="italic text-emerald-400">Chama no Rateio</strong>{' '}
-          é uma aplicação web desenvolvida para ajudar grupos de pessoas a
-          organizar despesas compartilhadas de forma simples e prática. A
-          plataforma permite criar grupos para diferentes tipos de eventos e
-          atividades, como churrascos, reuniões, encontros, confraternizações,
-          pizzas, saídas para restaurantes, bares e outras ocasiões em que
-          várias pessoas compartilham despesas. O objetivo do Chama no Rateio é
-          facilitar a organização dos participantes e o acompanhamento dos
-          gastos, ajudando o grupo a ter uma visão mais clara das despesas
-          durante a organização do evento.
-        </Paragraph>
+        <div className="relative -top-14 z-20">
+          <SubtitleH3>Sobre o Chama no Rateio</SubtitleH3>
+          <Paragraph>
+            O{' '}
+            <strong className="italic text-emerald-400">Chama no Rateio</strong>{' '}
+            é uma aplicação web desenvolvida para ajudar grupos de pessoas a
+            organizar despesas compartilhadas de forma simples e prática. A
+            plataforma permite criar grupos para diferentes tipos de eventos e
+            atividades, como churrascos, reuniões, encontros, confraternizações,
+            pizzas, saídas para restaurantes, bares e outras ocasiões em que
+            várias pessoas compartilham despesas. O objetivo do Chama no Rateio
+            é facilitar a organização dos participantes e o acompanhamento dos
+            gastos, ajudando o grupo a ter uma visão mais clara das despesas
+            durante a organização do evento.
+          </Paragraph>
+        </div>
 
         <Paragraph>
           A aplicação foi criada para tornar o processo de organização mais
