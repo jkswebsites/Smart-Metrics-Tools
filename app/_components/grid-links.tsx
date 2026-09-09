@@ -5,7 +5,7 @@ import { apps } from '../constants/apps-list';
 
 const GridLinks = () => {
   return (
-    <div className="grid w-[520px] grid-cols-3 justify-items-center gap-8 py-3 lg:w-[700px]">
+    <div className="flex w-[520px] gap-3 py-3 pl-4 lg:w-[700px]">
       {apps.map((app, index) => (
         <div
           key={index}

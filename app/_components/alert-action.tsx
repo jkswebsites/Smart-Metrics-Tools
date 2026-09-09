@@ -3,13 +3,14 @@ import React, { useState } from 'react';
 import { AlertTriangleIcon } from 'lucide-react';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import Link from 'next/link';
+
 export default function AlertWarning() {
   const [show, setShow] = useState<boolean>(true);
 
   setInterval(() => setShow(false), 6000);
   return (
     show && (
-      <Alert className="mx-auto w-4/5 sm:w-[300px]">
+      <Alert className="mx-auto w-4/5">
         <AlertTriangleIcon />
         <AlertTitle>Informação!</AlertTitle>
         <AlertDescription>

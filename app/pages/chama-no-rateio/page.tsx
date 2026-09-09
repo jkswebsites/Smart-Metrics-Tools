@@ -7,6 +7,7 @@ import LogoImage from './_components/logo-image';
 import FooterOptions from './_components/footer-options';
 import { ContextChamaNoRateioProvider } from '@/app/context/chamaNoRateioContext';
 import ContentSite from './_components/content-site';
+import AlertWarning from '@/app/_components/alert-action';
 
 export const metadata: Metadata = {
   title: 'Chama no Rateio Web',
@@ -21,7 +22,10 @@ export const metadata: Metadata = {
 const ChamaNoRateioPage = () => {
   return (
     <main className="min-h-screen w-full">
-      <div className="z-0 mx-auto h-20 w-full overflow-hidden lg:h-[300px]">
+      <div className="relative z-0 mx-auto h-20 w-full overflow-hidden lg:h-[300px]">
+        <div className="absolute w-full">
+          <AlertWarning />
+        </div>
         <Image
           src={chamaNoRateio}
           alt="Churrasco do Boi"

@@ -4,17 +4,17 @@ import imgBoraPouper from '@/app/assets/images/bora-poupar-app.png';
 
 const HeroSkew = () => {
   return (
-    <div className="flex h-[150px] lg:h-[250px]">
-      <div className="flex h-full w-[50%] -skew-x-12 items-center justify-center bg-neutral-900">
+    <div className="flex h-[150px] overflow-hidden rounded-lg lg:h-[250px]">
+      <div className="flex h-full w-[50%] items-center justify-center bg-neutral-900">
         <div>
-          <h2 className="lg:text-3xl">
+          <h2 className="lg:text-5xl">
             <span className="font-oxygen font-thin">Oficina</span>
             <span className="font-montserrat text-custom-secondary font-bold">
               Web
             </span>
           </h2>
-          <p className="font-montserrat -mt-1 text-xs font-medium text-neutral-300">
-            Para seu Dia a Dia
+          <p className="font-montserrat -mt-1 text-[8px] font-medium text-neutral-300 lg:text-lg">
+            Soluções para seu Dia a Dia
           </p>
         </div>
       </div>

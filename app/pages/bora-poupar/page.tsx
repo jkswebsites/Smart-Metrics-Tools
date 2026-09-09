@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 import { BoraPouparContextProvider } from '@/app/context/boraPouparContext';
 import NavFooter from './_components/nav-footer';
 import { ImageCard, ImageContent, TitleContent } from '@/components/image-card';
-import Article from './_components/article';
+import ContentBoraPoupar from './_components/article';
 import AlertWarning from '@/app/_components/alert-action';
 
 export const metadata: Metadata = {
@@ -28,7 +28,10 @@ const BoraPouparPage = () => {
         </ImageCard>
         <MainManager />
 
-        <Article />
+        <div className="mx-auto mt-8 w-4/5 lg:w-4/6">
+          <ContentBoraPoupar />
+        </div>
+
         <div className="h-[200px]"></div>
         <NavFooter />
       </BoraPouparContextProvider>

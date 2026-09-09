@@ -2,6 +2,8 @@ import { Paragraph } from '@/app/_components/article';
 import {
   ArticleSections,
   SubtitleH3,
+  Section,
+  Article,
 } from '@/app/_components/article-sections';
 import Image from 'next/image';
 import React from 'react';
@@ -18,8 +20,8 @@ const AboutSaturnoApp = () => {
           height={0}
         />
       </div>
-      <div className="relative z-10 mx-auto -mt-7 w-[99%] rounded-t-2xl bg-neutral-950 px-10 lg:w-[600px]">
-        <ArticleSections>
+      <Section>
+        <Article>
           <SubtitleH3>Sobre à Oficina Web</SubtitleH3>
           <Paragraph>
             À <strong>Oficina Web</strong> é uma plataforma criada com o
@@ -53,8 +55,8 @@ const AboutSaturnoApp = () => {
             ferramentas contribuam para tornar suas atividades mais simples e
             práticas.
           </Paragraph>
-        </ArticleSections>
-      </div>
+        </Article>
+      </Section>
     </main>
   );
 };

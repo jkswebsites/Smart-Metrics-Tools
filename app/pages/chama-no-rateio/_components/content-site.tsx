@@ -1,7 +1,8 @@
 import {
-  ArticleSections,
   Paragraph,
   SubtitleH3,
+  Section,
+  Article,
 } from '@/app/_components/article-sections';
 import Image from 'next/image';
 import React from 'react';
@@ -10,206 +11,213 @@ import chamaNoRateio from '@/app/assets/images/chama-no-rateio/chama-no-rateio-p
 const ContentSite = () => {
   return (
     <div className="mx-auto px-3 py-2 sm:w-[600px]">
-      <ArticleSections>
-        <div className="relative h-64 w-full overflow-hidden rounded-lg lg:h-72">
-          <div className="absolute h-full w-full bg-gradient-to-t from-neutral-950 via-transparent to-neutral-950"></div>
-          <Image
-            src={chamaNoRateio}
-            alt="Chama no Rateio"
-            width={0}
-            height={0}
-            className="h-full"
-          />
-        </div>
-        <div className="relative -top-14 z-20">
-          <SubtitleH3>Sobre o Chama no Rateio</SubtitleH3>
+      <Section>
+        <Article>
+          <div className="relative h-64 w-full overflow-hidden rounded-lg lg:h-72">
+            <div className="absolute h-full w-full bg-gradient-to-t from-neutral-950 via-transparent to-neutral-950"></div>
+            <Image
+              src={chamaNoRateio}
+              alt="Chama no Rateio"
+              width={0}
+              height={0}
+              className="h-full"
+            />
+          </div>
+          <div className="relative -top-14 z-20">
+            <SubtitleH3>Sobre o Chama no Rateio</SubtitleH3>
+            <Paragraph>
+              O{' '}
+              <strong className="italic text-emerald-400">
+                Chama no Rateio
+              </strong>{' '}
+              é uma aplicação web desenvolvida para ajudar grupos de pessoas a
+              organizar despesas compartilhadas de forma simples e prática. A
+              plataforma permite criar grupos para diferentes tipos de eventos e
+              atividades, como churrascos, reuniões, encontros,
+              confraternizações, pizzas, saídas para restaurantes, bares e
+              outras ocasiões em que várias pessoas compartilham despesas. O
+              objetivo do Chama no Rateio é facilitar a organização dos
+              participantes e o acompanhamento dos gastos, ajudando o grupo a
+              ter uma visão mais clara das despesas durante a organização do
+              evento.
+            </Paragraph>
+          </div>
+
           <Paragraph>
-            O{' '}
-            <strong className="italic text-emerald-400">Chama no Rateio</strong>{' '}
-            é uma aplicação web desenvolvida para ajudar grupos de pessoas a
-            organizar despesas compartilhadas de forma simples e prática. A
-            plataforma permite criar grupos para diferentes tipos de eventos e
-            atividades, como churrascos, reuniões, encontros, confraternizações,
-            pizzas, saídas para restaurantes, bares e outras ocasiões em que
-            várias pessoas compartilham despesas. O objetivo do Chama no Rateio
-            é facilitar a organização dos participantes e o acompanhamento dos
-            gastos, ajudando o grupo a ter uma visão mais clara das despesas
-            durante a organização do evento.
+            A aplicação foi criada para tornar o processo de organização mais
+            simples, evitando a necessidade de controlar manualmente todas as
+            despesas e participantes.
           </Paragraph>
-        </div>
+        </Article>
 
-        <Paragraph>
-          A aplicação foi criada para tornar o processo de organização mais
-          simples, evitando a necessidade de controlar manualmente todas as
-          despesas e participantes.
-        </Paragraph>
-      </ArticleSections>
+        <Article>
+          <SubtitleH3>Quais problemas ele resolve?</SubtitleH3>
+          <Paragraph>
+            Há muitos desafios ao realizar eventos com despesas compartilhadas.
+            um simples churrasco com os amigos ou familiares pode se tornar uma
+            dor de cabeça na hora de organizar os participantes do evento e o
+            valor total da despesa.
+          </Paragraph>
 
-      <ArticleSections>
-        <SubtitleH3>Quais problemas ele resolve?</SubtitleH3>
-        <Paragraph>
-          Há muitos desafios ao realizar eventos com despesas compartilhadas. um
-          simples churrasco com os amigos ou familiares pode se tornar uma dor
-          de cabeça na hora de organizar os participantes do evento e o valor
-          total da despesa.
-        </Paragraph>
+          <Paragraph>
+            Gerenciar despesas e grupo de pessoas numerosas em eventos de forma
+            manual ou na calculadora tradicional pode aumentar à probabilidade
+            de erros, gerando transtorno para organizadores e convidados do
+            evento, podendo gerar conflitos e prejuízos entre os organizadores e
+            participantes.
+          </Paragraph>
 
-        <Paragraph>
-          Gerenciar despesas e grupo de pessoas numerosas em eventos de forma
-          manual ou na calculadora tradicional pode aumentar à probabilidade de
-          erros, gerando transtorno para organizadores e convidados do evento,
-          podendo gerar conflitos e prejuízos entre os organizadores e
-          participantes.
-        </Paragraph>
+          <Paragraph>
+            Com o Chama no Rateio, você pode acompanhar as despesas e os
+            participantes de onde estiver, mantendo as informações organizadas
+            antes e durante todo o evento.
+          </Paragraph>
+          <Paragraph>
+            Com o aplicativo <strong>Chama no Rateio</strong> você monitora em
+            tempo real o valor total das despesas e o valor que cada
+            participante da vaquinha pagará, assim mantendo você e os
+            participantes do evento informados e cientes de quanto pagará pela
+            sua participação no churrascos.
+          </Paragraph>
 
-        <Paragraph>
-          Com o Chama no Rateio, você pode acompanhar as despesas e os
-          participantes de onde estiver, mantendo as informações organizadas
-          antes e durante todo o evento.
-        </Paragraph>
-        <Paragraph>
-          Com o aplicativo <strong>Chama no Rateio</strong> você monitora em
-          tempo real o valor total das despesas e o valor que cada participante
-          da vaquinha pagará, assim mantendo você e os participantes do evento
-          informados e cientes de quanto pagará pela sua participação no
-          churrascos.
-        </Paragraph>
+          <Paragraph>
+            Essa aplicação web permite criar e gerenciar uma lista de produtos,
+            assim mantendo os participantes informando de cada produtos
+            adquirido, evitando contestação dos participantes do churrasco
+          </Paragraph>
+        </Article>
 
-        <Paragraph>
-          Essa aplicação web permite criar e gerenciar uma lista de produtos,
-          assim mantendo os participantes informando de cada produtos adquirido,
-          evitando contestação dos participantes do churrasco
-        </Paragraph>
-      </ArticleSections>
+        <Article>
+          <SubtitleH3>Princípais funcionalidades:</SubtitleH3>
+          <ul className="list-disc space-y-3 pl-5">
+            <li>Visualizar despesas;</li>
+            <li>Registrar, listar e gerenciar produtos;</li>
+            <li>Criar grupos;</li>
+            <li>Adicionar participantes;</li>
+            <li>Acompanhamento de pagamentos;</li>
+            <li>Calcular o valor por participante;</li>
+            <li>Atualizar valores em tempo real;</li>
+          </ul>
+        </Article>
+        <Article>
+          <SubtitleH3>Para quem é o Chama no Rateio?</SubtitleH3>
+          <Paragraph>
+            Esse aplicativo web é perfeito para organizar participantes e
+            despesas compatilhadas em:
+          </Paragraph>
+          <ul className="list-disc space-y-3 pl-5">
+            <li>Churrascos entre amigos e familiares;</li>
+            <li>Confraternizações;</li>
+            <li>Viagens;</li>
+            <li>Happy Hour;</li>
+            <li>Em pizzarias;</li>
+            <li>Restaurantes;</li>
+            <li>Eventos familiares;</li>
+            <li>Natal e Ano Novo;</li>
+            <li>Vaquinhas para compras coletivas,</li>
+          </ul>
+        </Article>
 
-      <ArticleSections>
-        <SubtitleH3>Princípais funcionalidades:</SubtitleH3>
-        <ul className="list-disc space-y-3 pl-5">
-          <li>Visualizar despesas;</li>
-          <li>Registrar, listar e gerenciar produtos;</li>
-          <li>Criar grupos;</li>
-          <li>Adicionar participantes;</li>
-          <li>Acompanhamento de pagamentos;</li>
-          <li>Calcular o valor por participante;</li>
-          <li>Atualizar valores em tempo real;</li>
-        </ul>
-      </ArticleSections>
-      <ArticleSections>
-        <SubtitleH3>Para quem é o Chama no Rateio?</SubtitleH3>
-        <Paragraph>
-          Esse aplicativo web é perfeito para organizar participantes e despesas
-          compatilhadas em:
-        </Paragraph>
-        <ul className="list-disc space-y-3 pl-5">
-          <li>Churrascos entre amigos e familiares;</li>
-          <li>Confraternizações;</li>
-          <li>Viagens;</li>
-          <li>Happy Hour;</li>
-          <li>Em pizzarias;</li>
-          <li>Restaurantes;</li>
-          <li>Eventos familiares;</li>
-          <li>Natal e Ano Novo;</li>
-          <li>Vaquinhas para compras coletivas,</li>
-        </ul>
-      </ArticleSections>
+        <Article>
+          <Paragraph>
+            Organizar um evento em grupo pode ser muito divertido, mas dividir
+            as despesas nem sempre é uma tarefa fácil. Com várias pessoas
+            participando, é comum surgir dúvida sobre quem pagou, quanto foi
+            gasto e quanto cada participante deve contribuir. Para evitar
+            confusão, o<strong>Chama no Rateio</strong> ajuda você a manter tudo
+            organizado. A ferramenta foi desenvolvida para facilitar o
+            gerenciamento de despesas e participantes em eventos. Você pode
+            criar um grupo para organizar diferentes tipos de ocasiões.
+            Churrascos, reuniões, confraternizações, pizzas, restaurantes e
+            encontros são alguns exemplos. Registre as despesas realizadas
+            durante o evento de forma simples e organizada. Adicione os
+            participantes que fazem parte do grupo. Assim, você consegue
+            acompanhar melhor os gastos realizados ao longo do evento. Manter as
+            informações organizadas ajuda a evitar esquecimentos e divergências
+            na hora de dividir a conta. Com todos os dados reunidos, fica mais
+            fácil entender como as despesas foram distribuídas. Isso proporciona
+            mais clareza para todos os participantes do grupo. O objetivo do
+            Chama no Rateio é tornar a divisão das despesas mais simples e
+            transparente. Dessa forma, você pode aproveitar o evento sem
+            precisar se preocupar em guardar todas as informações de cabeça.
+            Evite surpresas desagradáveis na hora de fechar a conta. Organize
+            previamente os participantes e acompanhe as despesas durante o
+            evento. A ferramenta também pode ser útil para grupos que costumam
+            compartilhar diferentes tipos de gastos. Em vez de depender de
+            anotações espalhadas ou cálculos manuais, mantenha tudo
+            centralizado. O Chama no Rateio oferece uma maneira prática de
+            acompanhar essas informações. Quanto mais organizada estiver a
+            informação, mais fácil será conferir os valores no final. A proposta
+            é ajudar o grupo a ter uma visão clara das despesas compartilhadas.
+            Assim, todos podem consultar e entender melhor os gastos
+            registrados. A ferramenta não substitui comprovantes ou documentos
+            de pagamento. Ela funciona como um recurso de organização e
+            acompanhamento das despesas do grupo. O Chama no Rateio foi criado
+            pensando nas situações comuns do dia a dia. Principalmente naquelas
+            em que várias pessoas precisam dividir custos de maneira organizada.
+            Não deixe para descobrir os valores somente no final do evento.
+            Organize os participantes e registre as despesas conforme elas
+            acontecem. Use o
+            <strong className="text-emerald-800"> Chama no Rateio</strong> para
+            deixar a divisão da conta mais simples, clara e organizada.
+          </Paragraph>
+          <Paragraph>
+            Chama no Rateio: organize as despesas, acompanhe os participantes e
+            evite confusão na hora de dividir a conta.
+          </Paragraph>
+        </Article>
+        <Article>
+          <SubtitleH3>Como funciona?</SubtitleH3>
+          <Paragraph>
+            Essa aplicação permite adicionar produtos e seus respectivos valores
+            à lista, que pode ser consultada posteriormente pelos membros
+            Participantes do churrasco: caso haja contestação sobre algum item,
+            ele pode ser removido da lista, atualizando o valor total e o total
+            de cada participante em tempo real.
+          </Paragraph>
 
-      <ArticleSections>
-        <Paragraph>
-          Organizar um evento em grupo pode ser muito divertido, mas dividir as
-          despesas nem sempre é uma tarefa fácil. Com várias pessoas
-          participando, é comum surgir dúvida sobre quem pagou, quanto foi gasto
-          e quanto cada participante deve contribuir. Para evitar confusão, o
-          <strong>Chama no Rateio</strong> ajuda você a manter tudo organizado.
-          A ferramenta foi desenvolvida para facilitar o gerenciamento de
-          despesas e participantes em eventos. Você pode criar um grupo para
-          organizar diferentes tipos de ocasiões. Churrascos, reuniões,
-          confraternizações, pizzas, restaurantes e encontros são alguns
-          exemplos. Registre as despesas realizadas durante o evento de forma
-          simples e organizada. Adicione os participantes que fazem parte do
-          grupo. Assim, você consegue acompanhar melhor os gastos realizados ao
-          longo do evento. Manter as informações organizadas ajuda a evitar
-          esquecimentos e divergências na hora de dividir a conta. Com todos os
-          dados reunidos, fica mais fácil entender como as despesas foram
-          distribuídas. Isso proporciona mais clareza para todos os
-          participantes do grupo. O objetivo do Chama no Rateio é tornar a
-          divisão das despesas mais simples e transparente. Dessa forma, você
-          pode aproveitar o evento sem precisar se preocupar em guardar todas as
-          informações de cabeça. Evite surpresas desagradáveis na hora de fechar
-          a conta. Organize previamente os participantes e acompanhe as despesas
-          durante o evento. A ferramenta também pode ser útil para grupos que
-          costumam compartilhar diferentes tipos de gastos. Em vez de depender
-          de anotações espalhadas ou cálculos manuais, mantenha tudo
-          centralizado. O Chama no Rateio oferece uma maneira prática de
-          acompanhar essas informações. Quanto mais organizada estiver a
-          informação, mais fácil será conferir os valores no final. A proposta é
-          ajudar o grupo a ter uma visão clara das despesas compartilhadas.
-          Assim, todos podem consultar e entender melhor os gastos registrados.
-          A ferramenta não substitui comprovantes ou documentos de pagamento.
-          Ela funciona como um recurso de organização e acompanhamento das
-          despesas do grupo. O Chama no Rateio foi criado pensando nas situações
-          comuns do dia a dia. Principalmente naquelas em que várias pessoas
-          precisam dividir custos de maneira organizada. Não deixe para
-          descobrir os valores somente no final do evento. Organize os
-          participantes e registre as despesas conforme elas acontecem. Use o
-          <strong className="text-emerald-800"> Chama no Rateio</strong> para
-          deixar a divisão da conta mais simples, clara e organizada.
-        </Paragraph>
-        <Paragraph>
-          Chama no Rateio: organize as despesas, acompanhe os participantes e
-          evite confusão na hora de dividir a conta.
-        </Paragraph>
-      </ArticleSections>
-      <ArticleSections>
-        <SubtitleH3>Como funciona?</SubtitleH3>
-        <Paragraph>
-          Essa aplicação permite adicionar produtos e seus respectivos valores à
-          lista, que pode ser consultada posteriormente pelos membros
-          Participantes do churrasco: caso haja contestação sobre algum item,
-          ele pode ser removido da lista, atualizando o valor total e o total de
-          cada participante em tempo real.
-        </Paragraph>
+          <Paragraph>
+            O Chama no Rateio é uma ferramenta de organização e controle de
+            despesas compartilhadas. A plataforma não oferece serviços
+            financeiros, empréstimos, investimentos ou qualquer tipo de operação
+            bancária.
+          </Paragraph>
+        </Article>
 
-        <Paragraph>
-          O Chama no Rateio é uma ferramenta de organização e controle de
-          despesas compartilhadas. A plataforma não oferece serviços
-          financeiros, empréstimos, investimentos ou qualquer tipo de operação
-          bancária.
-        </Paragraph>
-      </ArticleSections>
+        <Article>
+          <SubtitleH3>Nosso objetivo</SubtitleH3>
+          <Paragraph>
+            Nosso objetivo é oferecer uma ferramenta simples e acessível para
+            auxiliar pessoas na organização de eventos e no controle de despesas
+            compartilhadas, proporcionando uma experiência prática para grupos
+            de diferentes tamanhos.
+          </Paragraph>
+          <Paragraph>
+            O Chama no Rateio está em constante evolução e pode receber novas
+            funcionalidades para melhorar a experiência dos usuários.
+          </Paragraph>
+        </Article>
 
-      <ArticleSections>
-        <SubtitleH3>Nosso objetivo</SubtitleH3>
-        <Paragraph>
-          Nosso objetivo é oferecer uma ferramenta simples e acessível para
-          auxiliar pessoas na organização de eventos e no controle de despesas
-          compartilhadas, proporcionando uma experiência prática para grupos de
-          diferentes tamanhos.
-        </Paragraph>
-        <Paragraph>
-          O Chama no Rateio está em constante evolução e pode receber novas
-          funcionalidades para melhorar a experiência dos usuários.
-        </Paragraph>
-      </ArticleSections>
+        <Article>
+          <SubtitleH3>Adicionando Participantes</SubtitleH3>
+          <Paragraph>
+            Gerencie participantes, adicione por nome ou apelidos, monitore a
+            quantidade de pessoas participando da vaquinha, e também é possível
+            gerenciar os participantes que já pagaram e os que não pagaram o
+            valor total da vaquinha dividido pela quantidade de participantes
+          </Paragraph>
+        </Article>
 
-      <ArticleSections>
-        <SubtitleH3>Adicionando Participantes</SubtitleH3>
-        <Paragraph>
-          Gerencie participantes, adicione por nome ou apelidos, monitore a
-          quantidade de pessoas participando da vaquinha, e também é possível
-          gerenciar os participantes que já pagaram e os que não pagaram o valor
-          total da vaquinha dividido pela quantidade de participantes
-        </Paragraph>
-      </ArticleSections>
-
-      <ArticleSections>
-        <SubtitleH3>Adicionando Produtos</SubtitleH3>
-        <Paragraph>
-          Gerencie produtos, adicione itens à lista ou remover, à aplicação{' '}
-          <strong className="text-emerald-500">Chama no Rateio</strong> calcula
-          em tempo real, somam os item e divide pela quantidade de participantes
-          e mostra o valor total para cada participante.
-        </Paragraph>
-      </ArticleSections>
+        <Article>
+          <SubtitleH3>Adicionando Produtos</SubtitleH3>
+          <Paragraph>
+            Gerencie produtos, adicione itens à lista ou remover, à aplicação{' '}
+            <strong className="text-emerald-500">Chama no Rateio</strong>{' '}
+            calcula em tempo real, somam os item e divide pela quantidade de
+            participantes e mostra o valor total para cada participante.
+          </Paragraph>
+        </Article>
+      </Section>
     </div>
   );
 };

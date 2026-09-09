@@ -29,14 +29,16 @@ export default function HomeOficinaWeb54() {
       <HeroSkew />
 
       <main className="mt-5 lg:flex">
-        <div className="w-full overflow-y-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-          <h2 className="font-oxygen text-3xl font-bold text-neutral-200">
-            Aplicativos Web
-          </h2>
-          <p className="-mt-2 font-sans italic text-neutral-400">
-            Facilitando sua vida com aplicativos;
-          </p>
-          <GridLinks />
+        <div>
+          <div className="w-full overflow-y-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            <h2 className="font-oxygen text-3xl font-bold text-neutral-200">
+              Aplicativos Web
+            </h2>
+            <p className="-mt-2 font-sans italic text-neutral-400">
+              Facilitando sua vida com aplicativos;
+            </p>
+            <GridLinks />
+          </div>
           <div className="my-4 lg:w-[700px]">
             <ContentPage />
           </div>
